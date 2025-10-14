@@ -1,0 +1,16 @@
+.container{
+    max-width:960px;
+    margin: 0 auto;
+}
+
+
+input, textarea, label{
+    display:block;
+}
+
+
+
+
+input#submit-button{
+    margin:20px 0px;
+}
