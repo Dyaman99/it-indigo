@@ -100,11 +100,17 @@
       <h2>Hyperlinks</h2>
       <ul>
         <li>
-          <a href="about.html" title="this is the title attribute">Relative Link</a>
+          <a href="about.html" title="this is the title attribute"
+            >Relative Link</a
+          >
         </li>
         <li><a href="https://ualr.edu">Absolute Link</a></li>
         <li>
-          <a href="https://en.wikipedia.org/wiki/Kitten#Nutrition" target="_blank">Anchor Link</a>
+          <a
+            href="https://en.wikipedia.org/wiki/Kitten#Nutrition"
+            target="_blank"
+            >Anchor Link</a
+          >
         </li>
         <li><a href="mailto:dyaman@ualr.edu">Email Link</a></li>
       </ul>
@@ -113,31 +119,52 @@
     <section id="table" class="container">
       <h2>Table</h2>
       <table border="1">
-        <tr><th>Item</th><th>Quantity</th><th>Cost</th></tr>
-        <tr><td>Apples</td><td>4</td><td>1.65</td></tr>
-        <tr><td>Strawberries</td><td>25</td><td>6.79</td></tr>
-        <tr><td>Grapes</td><td>20</td><td>3.25</td></tr>
-        
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Cost</th>
+        </tr>
+        <tr>
+          <td>Apples</td>
+          <td>4</td>
+          <td>1.65</td>
+        </tr>
+        <tr>
+          <td>Strawberries</td>
+          <td>25</td>
+          <td>6.79</td>
+        </tr>
+        <tr>
+          <td>Grapes</td>
+          <td>20</td>
+          <td>3.25</td>
+        </tr>
       </table>
     </section>
     <section id="images" class="container">
       <h2>Images</h2>
-      <img src="assets/img/cute-cat.webp" alt="cute cat picture who is posing in a funny way" />
+      <img
+        src="assets/img/cute-cat.webp"
+        alt="cute cat picture who is posing in a funny way"
+      />
     </section>
 
     <section id="form" class="container">
       <form action="processing-script.php" method="post">
-
         <fieldset>
           <legend>Personal Info</legend>
           <label for="cust-name">Customer Name:</label>
           <input type="text" id="cust-name" name="cust-name" />
 
           <label for="date-purchased">Date of purchase:</label>
-          <input type="date" id="date-purchased" name="date-purchased"/> 
+          <input type="date" id="date-purchased" name="date-purchased" />
 
           <label for="address">Address:</label>
-          <textarea placeholder="street, city, zip code" id="address" name="address"></textarea>
+          <textarea
+            placeholder="street, city, zip code"
+            id="address"
+            name="address"
+          ></textarea>
 
           <label for="fav-color">Favorite Color</label>
           <select id="fav-color" name="fav-color">
@@ -147,11 +174,38 @@
             <option selected>-------</option>
           </select>
 
-          <input type="submit" id="submit-button"/>
+          <input type="submit" id="submit-button" />
         </fieldset>
-
       </form>
+    </section>
 
+    <section id="text-level-semantics">
+      <h2>Text Level Semantics</h2>
+      <p>
+        Lorem ipsum <del>dolor sit amet</del> consectetur, adipisicing elit.
+        Dolorem consequatur <em>neque ipsa</em> iusto amet hic
+        <strong>iure delectus consectetur</strong> necessitatibus quas natus,
+        laudantium blanditiis deserunt. <br />Placeat modi accusamus id cum
+        tempore quod. Fuga ratione cum hic vel a dolor error adipisci ea
+        suscipit eius saepe doloremque dicta exercitationem, corrupti
+        <sub>velit</sub> <sup>fugiat</sup>.
+      </p>
+    </section>
+
+    <section id="structural-elements">
+      <h2>Structural Elements</h2>
+      <!-- Preformat -->
+      <pre>
+<code>&lt;main&gt;</code>
+<code>&lt;section&gt;</code>
+<code>&lt;nav&gt;</code>
+<code>&lt;header&gt;</code>
+<code>&lt;footer&gt;</code>
+<code>&lt;aside&gt;</code>
+<code>&lt;article&gt;</code>
+<code>&lt;figure&gt;</code>
+<code>&lt;figcaption&gt;</code>
+    </pre>
     </section>
   </body>
 </html>
