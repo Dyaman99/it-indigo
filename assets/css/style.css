@@ -1,5 +1,80 @@
+
+/* My Color Scheme 
+
+Ragin Beige: #fff5d7
+Coral Pink: #ff5e6c
+Sleuthe Yellow: #feb300
+Pink Leaf: #ffaaab
+Font color: #2D1728
+
+*/
+
+/*  Font
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&family=Sniglet:wght@400;800&display=swap" rel="stylesheet">
+
+ font-family: "Caladea", serif;
+  font-family: "Sniglet", system-ui;
+
+
+*/
+
+
+
+body{
+  background-color: #fff5d7;
+background-image: url("data:image/svg+xml,%3Csvg width='44' height='12' viewBox='0 0 44 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 12v-2L0 0v10l4 2h16zm18 0l4-2V0L22 10v2h16zM20 0v8L4 0h16zm18 0L22 8V0h16z' fill='%23ffaaab' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+
+main{
+  background-color: #fff5d7;
+  padding: 20px 40px 40px 40px;
+  border-radius: 20px;
+  
+
+}
 .container {
     max-width: 840px; /* Design Time */
     margin: 0 auto;
   }
+
+header{
+  text-align: center;
+}
+
+  header h1{
+    color:#2D1728;
+    font-family: "Caladea", serif;
+    font-size: 3em;
+  }
+
+section#projects{
+  border: 1px solid #2D1728;
+  border-radius:20px;
+}
+
+#projects nav ul li{
+  list-style-type: none;
+  margin:20px;
+  padding:10px;
+}
   
+li a{
+  text-decoration: none;
+  font-family: "Sniglet", system-ui;
+  color:#2D1728;
+  border: 1px solid #ff5e6c;
+  border-radius:10px;
+  background-color: #ff5e6c;
+  padding: 10px;
+  font-size:1.2rem;
+}
+
+li a:hover{
+  border: 1px solid #ffaaab;
+  background-color:#ffaaab;
+}
+
