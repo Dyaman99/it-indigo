@@ -1,0 +1,55 @@
+/*cStyles for CSS Demo */
+
+:root{
+    --primary-bg-color:#FFF1F1;
+    --header-bg:#3B0270;
+}
+ 
+html{
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+
+
+body{
+    background-color:var(--primary-bg-color);
+    font-family: "Inria Serif", serif;
+    margin:0px;
+}
+
+
+main{
+    margin:0px auto;
+}
+
+.container{
+    margin:0px auto;
+    max-width:740px;
+}
+
+
+header.primary{
+    margin:0px auto;
+    text-align: center;
+    background-color:var(--header-bg);
+    padding:20px;
+    color:var(--primary-bg-color)
+} 
+
+.hgroup h1 a{
+    text-decoration: none;
+    color:var(--primary-bg-color)
+}
+
+header.primary nav ul li{
+    list-style-type: none;
+}
+
+header.primary nav ul li a{
+    text-decoration: none;
+}
+
