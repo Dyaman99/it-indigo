@@ -3,6 +3,7 @@
 :root{
     --primary-bg-color:#FFF1F1;
     --header-bg:#3B0270;
+
 }
  
 html{
@@ -13,7 +14,9 @@ html{
     box-sizing: inherit;
 }
 
-
+img{
+    width:100%;
+}
 
 body{
     background-color:var(--primary-bg-color);
@@ -30,7 +33,7 @@ main{
 
 .container{
     margin:0px auto;
-    max-width:740px;
+    max-width:940px;
 }
 
 
@@ -98,13 +101,14 @@ header.primary nav ul li a:hover{
 }
 
 
-#content h2, #blog > h2{
+#content h2, #blog div.container > h2, .widget header h2{
     color:#BF396A;
     font-size:1.8rem;
     font-weight: bolder;
     border-left: 7.5px solid #3B0270;
     border-radius: 0px 0px 0px 10px;
     padding-left: 5px;
+    margin-top: 0px;
 }
 
 section#content{
@@ -115,4 +119,69 @@ section#content{
 #content h3{
     font-size:1.4rem;
     font-weight:900;
+}   
+
+section#blog{
+    background-color: #3B0270;
+    padding-top:30px;
+    padding-bottom:30px;
+}
+
+#blog div.container h2{
+    text-shadow: 2px #000000 ;
+}
+
+#blog div.container .post{
+    display:grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 
+    "figure header"
+    "figure post-content"
+    "figure footer"
+    ;
+    margin-bottom: 20px;
+    padding:20px;
+    background-color: #FFF1F1;
+    border-radius: 20px;
+
+}
+
+.post figure{
+    grid-area: figure;
+    margin:0 20px 0 0;
+}
+
+.post header{
+    grid-area: header;
+}
+
+.post .post-content{
+    grid-area: post-content;
+}
+
+.post .post-meta{
+    grid-area: footer;
+}
+
+aside{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+aside div.container{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:40px;
+} 
+
+/* Footer Styles */
+
+#colophon{
+    text-align: center;
+    background-color:var(--header-bg);
+    padding:20px;
+    color:var(--primary-bg-color);
+    background-image:url(../img/bg_1.webp);
+    background-repeat: no-repeat;
+    background-size:cover;
 }
