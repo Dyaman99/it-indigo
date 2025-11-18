@@ -20,7 +20,8 @@ img{
 
 body{
     background-color:var(--primary-bg-color);
-    font-family: "Inria Serif", serif;
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
     margin:0px;
 }
 
@@ -56,7 +57,8 @@ header.primary{
 .hgroup h1 a{
     text-decoration: none;
     color:var(--primary-bg-color);
-    font-size:2.7rem;
+    font-size:1.5em;
+    text-shadow: 2px 2px 6px #000000 ;
 }
 
 .hgroup h2{
@@ -103,7 +105,7 @@ header.primary nav ul li a:hover{
 
 #content h2, #blog div.container > h2, .widget header h2{
     color:#BF396A;
-    font-size:1.8rem;
+    font-size:2em;
     font-weight: bolder;
     border-left: 7.5px solid #3B0270;
     border-radius: 0px 0px 0px 10px;
@@ -113,8 +115,10 @@ header.primary nav ul li a:hover{
 
 section#content{
     margin-top:40px;
+    margin-bottom:40px;
     line-height:1.5;
 }
+
 
 #content h3{
     font-size:1.4rem;
@@ -163,6 +167,37 @@ section#blog{
     grid-area: footer;
 }
 
+article.post header h2{
+    margin:10px 0px 0px 0px;
+}
+
+article.post header h2 a{
+    text-decoration: none;
+    color:#3B0270;
+    transition:3s;
+}
+
+article.post header h2 a:hover{
+    text-decoration: underline; 
+}
+
+.post figure figcaption{
+    margin: 5px 0px;
+}
+
+article.post div.post-content p{
+    margin:0px;
+}
+
+article.post footer{
+    margin: 10px 0px 10px 0px;
+}
+
+article.post footer a{
+    text-decoration: none;
+    color:#BF396A;
+}
+
 aside{
     padding-top: 30px;
     padding-bottom: 30px;
@@ -173,6 +208,20 @@ aside div.container{
     grid-template-columns: 1fr 1fr;
     gap:40px;
 } 
+
+
+article.widget p a{
+    text-decoration: none;
+    color:#BF396A;
+}
+
+article.widget p a:hover{
+    text-decoration: underline;
+}
+
+
+
+
 
 /* Footer Styles */
 
@@ -185,3 +234,84 @@ aside div.container{
     background-repeat: no-repeat;
     background-size:cover;
 }
+
+
+
+
+
+/*  Responsive Design      */
+
+
+/*  Additional Tweaks  */
+
+@media screen and (max-width:1024px){
+    .container{
+        max-width:850px;
+    }
+
+}
+
+
+
+@media screen and (max-width:870px){
+
+    .container{
+    max-width:745px;
+    }
+
+    header.primary{
+        flex-direction: column;
+    }
+
+}
+
+
+@media screen and (max-width:768px){
+
+    .container{
+    max-width:560px;
+    }
+
+    aside div.container{
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+
+
+/*   Mobile Version    */
+@media screen and (max-width:425px){
+
+    .container{
+    max-width:340px;
+    }
+
+    #blog div.container .post{
+        grid-template-columns: 1fr;
+        grid-template-rows: 50% 13% 30% 7%;
+        grid-template-areas: 
+        "figure"
+        "header"
+        "post-content"
+        "footer"
+        ;
+    }
+
+    .post figure{
+        margin: 0px;
+    }
+
+    aside div.container{
+        grid-template-columns: 1fr;
+    }
+
+    #content h2, #blog div.container > h2, .widget header h2{
+        font-size: 1.8em;
+    }
+
+}
+
+
+

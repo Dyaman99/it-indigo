@@ -7,9 +7,7 @@
         <link rel="stylesheet" href="assets/css/style.css" />
         <meta name="description" content="My Intro to IT and Apps Course Wrokspace" />
         <meta name="author" content="Dilasa Yaman" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&family=Sniglet:wght@400;800&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     </head>
     <body>
         <main class="container">
@@ -21,16 +19,16 @@
                 
                  <form action="https://brucebauer.info/assets/ITEC3650/datadump.php">
                     <label for="fname" class="formlabel">First name:</label> 
-                    <input type="text" id="fname" name="fname" > <br>
+                    <input type="text" id="fname" name="fname" size="30" maxlength="30"> <br>
 
                     <label for="m-innitial" class="formlabel">Middle Innitial:</label> 
-                    <input type="text" id="m-innitial" name="m-innitial" ><br>
+                    <input type="text" id="m-innitial" name="m-innitial" size="1" maxlength="1" ><br>
 
                     <label for="lname" class="formlabel">Last name:</label> 
-                    <input type="text" id="lname" name="lname" ><br>
+                    <input type="text" id="lname" name="lname"  size="30" maxlength="30"><br>
 
                     <label for="email" class="formlabel">Email:</label> 
-                    <input type="text" id="email" name="email" ><br>
+                    <input type="text" id="email" name="email"  size="30" maxlength="30"><br>
 
                     <label for="sex" class="formlabel">Sex:</label>
                     <input type="radio" id="male" name="male" >
@@ -41,36 +39,35 @@
                     <label for="other">N/A</label> <br>
 
                     <label for="birthday" class="formlabel">Birthday:</label> 
-                    <input type="date" id="birthday" name="birthday" ><br>
+                    <input type="date" id="birthday" name="birthday" size="8" maxlength="8"><br>
 
                     <label for="height" class="formlabel">Height (inches):</label> 
-                    <input type="number" id="height" name="height" ><br>
+                    <input type="number" id="height" name="height"  size="3" maxlength="3"><br>
 
                     <label for="weight" class="formlabel">Weight (pounds):</label> 
-                    <input type="number" id="weight" name="weight" ><br>
+                    <input type="number" id="weight" name="weight" size="3" maxlength="3"><br>
 
                     <hr>
 
                     <label for="phone" class="formlabel">Phone Number:</label> 
-                    <input type="tel" id="phone" name="phone" ><br>
-
-                    <label for="phone" class="formlabel">Phone Number:</label> 
-                    <input type="tel" id="phone" name="phone" ><br>
+                    <input type="tel" id="phone" name="phone" size="14" maxlength="14"><br> 
 
                     <label for="marital-status" class="formlabel">Marital Status:</label> 
                     <select id="fav-color" name="fav-color">
-                        <option value="single">Single</option>
-                        <option value="Married">Married</option>
-                        <option value="Divorced">Divorced</option>
+                        <option value="S">Single</option>
+                        <option value="M">Married</option>
+                        <option value="D">Divorced</option>
+                        <option value="L">Legally Separated</option>
+                        <option value="W">Widowed</option>
                         <option selected>Select a Status</option>
                     </select> <br>
 
                     <label for="address" class="formlabel">Address:</label> 
-                    <input type="text" id="address" name="address" ><br>
+                    <input type="text" id="address" name="address" size="30" maxlength="30"><br>
 
                     
-                    <label for="city-state-zip" class="formlabel">City/sState/Zip:</label> 
-                    <input type="text" id="city-state-zip" name="city-state-zip" > <span>,</span>
+                    <label for="city-state-zip" class="formlabel">City/State/Zip:</label> 
+                    <input type="text" id="city-state-zip" name="city-state-zip" size="30" maxlength="30"> <span>,</span>
                     <select name="state" id="state" required>
                     <option value="" disabled selected>Select your state</option>
                     <option value="AL">Alabama</option>
@@ -124,22 +121,22 @@
                     <option value="WI">Wisconsin</option>
                     <option value="WY">Wyoming</option>
                     </select>
-                    <input type="number" id="zip" name="zip"><br>
+                    <input type="number" id="zip" name="zip" size="5" maxlength="5" ><br>
 
                     <hr>
 
                     <label for="medication" class="formlabel">Taking Medications:</label>
                     <input type="radio" id="yes" name="yes" >
-                    <label for="css">yes</label>
+                    <label for="css">Yes</label>
                     <input type="radio" id="no" name="no" >
-                    <label for="css">no</label><br>
+                    <label for="css">No</label><br>
 
                     <label for="list-medications" class="formlabel">If yes, list Medications here:</label>
-                    <textarea id="list-medications" name="list-medications"></textarea>
+                    <textarea id="list-medications" name="list-medications" rows="3" cols="30"></textarea>
                      <br>
 
                      <hr>
-
+                    <input type="submit" value="SubmitPatientForm" Name="SubmitPatientForm">
                 </form> 
 
             </section>
