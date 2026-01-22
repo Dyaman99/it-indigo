@@ -1,5 +1,5 @@
 .container{
-    max-width:960px;
+    max-width:1260px;
     margin: 0 auto;
 }
 
@@ -28,8 +28,8 @@ html {
 
 body{
   font-family: 'Lato', sans-serif;
-  background:#fff5d7;
-  padding:20px;
+  background:#EFE8E0;
+  padding:0px;
 }
 
 label, input {
@@ -38,6 +38,40 @@ label, input {
 
 header h1{
   text-align:center;
+}
+
+main{
+  display: grid;
+  grid-template-columns: 25% 75%;
+  grid-template-rows: 1fr;
+  grid-template-areas: "nav content";
+  min-height: calc(100vh - 1px);
+}
+
+#side-menu {
+  grid-area: nav;
+  padding:10px 40px;
+}
+
+#content {
+  grid-area: content;
+}
+
+#side-menu ul{
+	padding-left: 0px;
+}
+
+#side-menu ul li{
+	list-style-type: none;
+}
+
+#side-menu ul li a{
+	text-decoration: none;
+	color:rgb(17, 16, 16);
+}
+#side-menu ul li a:hover{
+	text-decoration: underline;
+	color:rgb(19, 36, 185);
 }
 
 section[id]{
