@@ -18,6 +18,7 @@ input#submit-button{
 /* ---------------Box Sizing----------------- */
 
 html {
+  scroll-behavior: smooth;
   box-sizing: border-box;
 }
 *,
@@ -28,29 +29,52 @@ html {
 
 body{
   font-family: 'Lato', sans-serif;
-  background:#EFE8E0;
+  background:#FFF4E9;
   padding:0px;
+  margin: 0px;
 }
 
 label, input {
   display:block;
 }
 
+header{
+	/* background-color: #8D6B94; */
+	background-color: #B2A3B5;
+	padding:1px;
+	margin-bottom: 20px;
+}
+
 header h1{
   text-align:center;
+  font-size: 3em;
+  margin: 40px 0px;
+  color: #FFFFFF;
+  
 }
 
 main{
-  display: grid;
-  grid-template-columns: 25% 75%;
-  grid-template-rows: 1fr;
-  grid-template-areas: "nav content";
-  min-height: calc(100vh - 1px);
+	display: grid;
+	grid-template-columns: 25% 75%;
+	grid-template-rows: 1fr;
+	grid-template-areas: "nav content";
 }
+
+/*---   side navigation --- */
 
 #side-menu {
   grid-area: nav;
-  padding:10px 40px;
+  padding: 5px 0px;
+  margin: 40px 40px;
+  border-right: 2px solid #cccccc;
+}
+
+/*---  makes nav stick when scrolling --- */
+#side-menu {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 #content {
@@ -63,6 +87,8 @@ main{
 
 #side-menu ul li{
 	list-style-type: none;
+	margin: 5px 0px;
+	font-size: 1.2em;
 }
 
 #side-menu ul li a{
@@ -71,7 +97,8 @@ main{
 }
 #side-menu ul li a:hover{
 	text-decoration: underline;
-	color:rgb(19, 36, 185);
+	/* color:#38204C; */
+	color: #7C7698;
 }
 
 section[id]{
@@ -82,6 +109,11 @@ section[id]{
   padding:20px;
   display:flex;
   flex-wrap: wrap;
+}
+
+section > h2{
+	color:#8D6B94;
+	font-size: 2.4em;
 }
 
 h2.section-heading{
@@ -113,6 +145,10 @@ h2.section-heading + h3.section-heading {
   padding:10px;
   margin-bottom:40px;
   overflow:auto;
+}
+
+#images div.output img{
+	width: 100%;
 }
 
 
