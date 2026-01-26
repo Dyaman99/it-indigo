@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Circle JS Project</title>
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <meta name="description" content="My Intro to IT and Apps Course Wrokspace" />
+        <meta name="author" content="Dilasa Yaman" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&family=Sniglet:wght@400;800&display=swap" rel="stylesheet">
+        <style>
+            
+    .formlabel {
+        display: inline-block;
+        width: 200px;
+        text-align: right;
+        padding: 5px;
+        font-weight: bold;
+    }
+
+    .error {
+        color: red;
+        padding-left: 5px;
+    }
+    
+        </style>
+    </head>
+    <body>
+        <main class="container">
+            <header>
+            <h1>Circle JS Project</h1>
+            </header>
+            
+            <form id="circle-form" onsubmit="return false" novalidate="novalidate">
+                <h2>Calculate Diameter, Circumference, and Area</h2>
+                <label for="radius" class="formlabel">Enter the Radius:</label>
+                <input type="text" id="user-radius" name="radius" data-rule-required="true" data-msg-required="Radius is required" 
+                data-rule-number="true" data-msg-number="Radius must be a number" data-rule-min="0" 
+                data-msg-min="Radius must be greater than 0."/>
+                <label for="radius" class="error" id="radius-error"></label>
+
+                <br>
+                <br>
+
+                <label class="formlabel"> Diameter: </label>
+                <span id="diameter"></span>
+
+                <br>
+                <br>
+                
+                <label class="formlabel"> Circumference: </label>
+                <span id="circumference"></span>
+
+                <br>
+                <br>
+                
+                <label class="formlabel"> Area: </label>
+                <span id="area"></span>
+
+                <br>
+                <br>
+
+                <input type="submit" value="Calculate" id="btncalc" onclick="calculateCircle()" />
+                <input type="submit" value="Clear" id="btnclear" onclick="clearForm()" />
+
+            </form>
+
+        </main>
+        
+        <script>
+            "use strict";
+            $( "#circle-form" ).validate({
+
+            })
+
+            function calculateCircle(){
+
+                if ($("#circle-form").valid()) {
+
+                    document.getElementById("diameter").innerHTML = "";
+                    document.getElementById("circumference").innerHTML = "";
+                    document.getElementById("area").innerHTML = "";
+
+                    let circleRadius;
+                    let radiusfp;
+                    let diameter;
+                    let circumference;
+                    let area;
+
+                    circleRadius = document.getElementById("user-radius").value;
+
+                    radiusfp = parseFloat(circleRadius);
+                    diameter = radiusfp = 2;
+                    circumference = 2 * Math.PI * radiusfp;
+                    area = Math.PI * radiusfp * radiusfp;
+
+                    document.getElementById("diameter").innerHTML = diameter.toString();
+                    document.getElementById("circumference").innerHTML = circumference.toString();
+                    document.getElementById("area").innerHTML = area.toString();
+
+
+                }
+            }
+
+            function clearForm(){
+                document.getElementById("user-radius").value = "";
+                document.getElementById("radius-error").innerHTML = "";
+
+                document.getElementById("diameter").innerHTML = "";
+                document.getElementById("circumference").innerHTML = "";
+                document.getElementById("area").innerHTML = "";
+
+
+            }
+
+        </script>
+
+    </body>
+</html>
