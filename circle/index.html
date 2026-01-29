@@ -95,14 +95,13 @@
                     circleRadius = document.getElementById("user-radius").value;
 
                     radiusfp = parseFloat(circleRadius);
-                    diameter = radiusfp = 2;
+                    diameter = radiusfp * 2;
                     circumference = 2 * Math.PI * radiusfp;
                     area = Math.PI * radiusfp * radiusfp;
 
                     document.getElementById("diameter").innerHTML = diameter.toString();
                     document.getElementById("circumference").innerHTML = circumference.toString();
                     document.getElementById("area").innerHTML = area.toString();
-
 
                 }
             }
