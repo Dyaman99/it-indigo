@@ -40,3 +40,54 @@ form#circle-form{
 form#circle-form h2{
     border-bottom: 1px solid #cccccc;
 }
+
+.formlabel {
+  display: inline-block;
+  width: 200px;
+  text-align: right;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+  padding-left: 5px;
+}
+    
+input#user-radius{
+    padding: 3px;
+  }
+
+/*    -----    Media Queries  --------- */
+
+@media screen and (max-width:425px){
+  .container {
+    max-width: 400px;
+  }
+
+  .formlabel {
+  text-align: left;
+}
+
+}
+
+
+@media screen and (max-width:530px){
+  .container {
+    max-width: 400px;
+  }
+
+  .formlabel {
+    display: block;
+    text-align: left;
+  }
+
+  span#diameter, span#circumference, span#area{
+    padding: 5px;
+  }
+
+  input#user-radius{
+    margin-left: 5px;
+  }
+
+}
