@@ -13,6 +13,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&family=Sniglet:wght@400;800&display=swap" rel="stylesheet">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>
         <style>
             
     
@@ -26,112 +30,53 @@
             
             <form id="calculator-form" onsubmit="return false" novalidate="novalidate">
                 <fieldset>
-                    <h2>Calculator</h2>
+                    <legend>Calculator</legend>
+
+                <label for="input1" class="formlabel">Operand 1: </label>
+                <input type="text" id="input1" name="input1" data-rule-required="true" data-msg-required="Operand 1 is required" 
+                data-rule-number="true" data-msg-number="Input must be a number." />
+                <label for="input1" class="error" id="input1-error"></label>
+
+                <br>
+                <br>
+                <label>Operator: </label>
+                <label for="addition"><input type="radio" name="operator" id="addition" value="+"
+                data-rule-required="true" data-msg-required="Operator is required" />+</label>
+                <label for="subtract"><input type="radio" name="operator" id="subtract" value="-">-</label>
+                <label for="muliply"><input type="radio" name="operator" id="multiply" value="*">*</label>
+                <label for="divide"><input type="radio" name="operator" id="divide" value="/">/</label>
+                <label for="operator" class="error" id="operatorError"></label>
+
+                <br>
+                <br>
+
+                <label for="input2" class="formlabel">Operand 2: </label>
+                <input type="text" id="input2" name="input2" data-rule-required="true" data-msg-required="Operand 2 is required" 
+                data-rule-number="true" data-msg-number="Input must be a number"/>
+                <label for="input2" class="error" id="input2-error"></label>
+
+                
+                <br>
+                <br>
+
+                <label class="formlabel"> Result: </label>
+                <span id="result"></span>
+
+                <br>
+                <br>
+
+                <input type="button" value="Calculate" id="Calculate" onclick="calculate();" />
+                <input type="button" value="Clear" id="Clear" onclick="clearForm();" />
+
 
                 </fieldset>
-                
-                <label for="user-radius" class="formlabel">Enter the Radius:</label>
-                <input type="text" id="user-radius" name="radius" data-rule-required="true" data-msg-required="Radius is required" 
-                data-rule-number="true" data-msg-number="Radius must be a number" data-rule-min="0" 
-                data-msg-min="Radius must be greater than 0."/>
-                <label for="user-radius" class="error" id="radius-error"></label>
+           
 
-                <br>
-                <br>
-
-                <label class="formlabel"> Diameter: </label>
-                <span id="diameter"></span>
-
-                <br>
-                <br>
-                
-                <label class="formlabel"> Circumference: </label>
-                <span id="circumference"></span>
-
-                <br>
-                <br>
-                
-                <label class="formlabel"> Area: </label>
-                <span id="area"></span>
-
-                <br>
-                <br>
-
-                <input type="submit" value="Calculate" id="btncalc" onclick="calculateCircle()" />
-                <input type="submit" value="Clear" id="btnclear" onclick="clearForm()" />
 
             </form>
 
         </main>
         
-        <script>
-            "use strict";
-            $( "#circle-form" ).validate({
-
-            })
-
-            function calculateCircle(){
-
-                if ($("#circle-form").valid()) {
-
-                    document.getElementById("diameter").innerHTML = "";
-                    document.getElementById("circumference").innerHTML = "";
-                    document.getElementById("area").innerHTML = "";
-
-                    let circleRadius;
-                    let radiusfp;
-                    let diameter;
-                    let circumference;
-                    let area;
-
-                    circleRadius = document.getElementById("user-radius").value;
-
-                    radiusfp = parseFloat(circleRadius);
-                    diameter = calcDiameter(radiusfp);
-                    circumference = calcCircumference(radiusfp);
-                    area = calcArea(radiusfp);
-
-                    document.getElementById("diameter").innerHTML = diameter.toString();
-                    document.getElementById("circumference").innerHTML = circumference.toString();
-                    document.getElementById("area").innerHTML = area.toString();
-
-                }
-            }
-
-            function calcDiameter(r){
-                let diameter1;
-                diameter1 = r * 2;
-
-                return diameter1;
-            }
-
-            function calcCircumference(r){
-                let circumference1;
-                circumference1 = 2 * Math.PI * r;
-
-                return circumference1;
-            }
-
-            function calcArea(r){
-                let area1;
-                area1 = Math.PI * r * r;
-
-                return area1;
-                
-            }
-
-            function clearForm(){
-                document.getElementById("user-radius").value = "";
-                document.getElementById("radius-error").innerHTML = "";
-
-                document.getElementById("diameter").innerHTML = "";
-                document.getElementById("circumference").innerHTML = "";
-                document.getElementById("area").innerHTML = "";
-
-
-            }
-
-        </script>
-
+    <script src="assets/js/scripts.js"></script>
     </body>
 </html>
