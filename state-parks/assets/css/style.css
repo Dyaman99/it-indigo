@@ -1,0 +1,317 @@
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+
+:root {
+  --main-bg-color: #F7F3EC;
+  --nav-bg-color: #497358;
+  --heading-color:#425948;
+}
+
+/* ------ Utility Classes  -------*/
+  
+.container {
+  max-width: 380px; /* Design Time */
+  margin: 0 auto;
+}
+  
+img{
+  max-width:100%;
+}
+
+
+h1, h2, h3, h4, h5, h6, nav {
+    font-family: "Raleway", sans-serif;
+}
+
+body{
+    margin:0px;
+    background-color: var(--main-bg-color);
+    font-family: "Montserrat", sans-serif;
+
+}
+
+h1{
+  margin:0px;
+}
+
+header.primary{
+    padding:10px 20px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--nav-bg-color);
+    font-family: "Raleway", sans-serif;
+
+    div.logo-text{
+      display:flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      color:var(--main-bg-color);
+    }
+
+    div.menu-items{
+        display: flex;
+        flex-direction: column;
+
+
+        .top-menu ul{
+            display:flex;
+            flex-direction:row;
+            justify-content: flex-end;
+        }
+
+        .top-menu ul li{
+            list-style-type: none;
+        }
+
+        .top-menu ul li a{
+            padding: 10px 15px;
+            text-decoration: none;
+            color:#fff;
+            font-size: 1.2rem;
+        }
+
+        .top-menu ul li a:hover{
+          text-decoration: underline;
+        }
+
+        nav.bottom-menu ul{
+            display: flex;
+            flex-direction: row;
+        }
+
+        nav.bottom-menu ul li{
+            list-style-type: none;
+
+        }
+
+        nav.bottom-menu ul li a{
+            padding: 10px 15px;
+            text-decoration: none;
+            color:#fff;
+            font-size: 1.2rem;
+        }
+
+        nav.bottom-menu ul li a:hover{
+          text-decoration: underline;
+
+        }
+    }
+}
+
+header.primary h1 a{
+  background-image: url("../img/ar-park-logo2.svg");
+  display: block;
+  width: 185px;
+  height: 160px;
+  margin: 0px auto;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+h2.site-title{
+  margin-left:20px;
+  text-shadow: 1px 1px 3px black;
+}
+
+.site-title span {
+  display: block;  
+  font-size: 2rem;
+}
+
+#book-button a{
+  border: 1px solid var(--main-bg-color);
+  border-radius:15px;
+}
+
+#book-button a:hover{
+  background-color: var(--main-bg-color);
+  border-color: var(--main-bg-color);
+  color:var(--nav-bg-color);
+  text-decoration: none;
+}
+
+
+
+
+/* ==========================================================================
+   ========================================================================== */
+
+/*---------------------The slideshow CSS-------------------- */
+/* --------- Hero Slider --------- */
+
+.hero-slider {
+  width: 100%;
+  position: relative;
+}
+
+.hero-slide {
+  position: relative;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 70vh;
+  min-height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-slides,
+.hero-slides .slick-list,
+.hero-slides .slick-track,
+.hero-slides .slick-slide {
+  height: 70vh;
+  min-height: 420px;
+}
+
+/* Overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.40);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  pointer-events: none;
+}
+
+.hero-overlay h2 {
+  color: #fefefe;
+  font-size: clamp(28px, 4vw, 56px);
+  line-height: 1.1;
+  margin: 0;
+  max-width: 900px;
+}
+
+/* Arrows */
+.hero-slides .slick-prev,
+.hero-slides .slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.hero-slides .slick-prev { left: 20px; }
+.hero-slides .slick-next { right: 20px; }
+
+.hero-slides .slick-prev:before,
+.hero-slides .slick-next:before {
+  color: white;
+  font-size: 30px;
+  opacity: 0.85;
+}
+
+/* Dots */
+.hero-slides .slick-dots li button:before {
+  color: white;
+  opacity: 0.6;
+}
+.hero-slides .slick-dots li.slick-active button:before {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+section#content h2{
+  color: var(--heading-color);
+  font-size:1.9rem;
+}
+
+
+
+
+
+/* ==========================================================================
+   ========================================================================== */
+
+/*---------------------Media Queries-------------------- */
+  
+
+  /*-----------------Tablet View---------------------- */
+  
+  @media screen and (min-width:768px){
+    
+    .container{
+      max-width:600px;
+    }
+    
+  }
+  
+  
+
+
+  /*----------------------- Desktop View (Small) --------------------- */
+
+
+@media screen and (min-width:992px){
+
+  .container{
+    max-width: 984px;
+  }
+
+}
+
+
+ /*---------------------- Desktop View (Large) --------------------- */
+
+
+
+ @media screen and (min-width:1320px){
+
+  .container{
+    max-width: 1131px;
+  }
+
+}
+
+
+
+/* ---------- Additional Tweaks ----------- */
+
+/* @media screen and (min-width:1200px){
+  
+} */
+
+
+
+
