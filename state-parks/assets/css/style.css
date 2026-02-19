@@ -57,6 +57,9 @@ body{
 
 }
 
+
+
+
 h1{
   margin:0px;
 }
@@ -252,13 +255,145 @@ h2.site-title{
 
 
 
-section#content h2{
+section h2{
   color: var(--heading-color);
   font-size:1.9rem;
+  margin:30px 0px;
 }
 
 
 
+div#content{
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-areas: 
+    "park-info events"
+    "map events"
+    "hours ."
+  ;
+  grid-gap:30px;
+}
+
+
+section#park-info{
+  grid-area: park-info;
+}
+
+section#events{
+  grid-area: events;
+}
+
+section#map-location{
+  grid-area: map;
+}
+
+section#hours{
+  grid-area: hours;
+}
+
+
+
+
+div#events-right{
+  margin-top: 30px;
+  padding: 0px 0px 20px 10px;
+  background-color:#7eb0bd ;
+  border: 1px solid #7eb0bd;
+  border-radius: 20px;
+}
+
+#events-right h2{
+  margin: 0px;
+  padding: 20px 0px;
+  color: var(--main-bg-color);
+}
+
+.event-info{
+  margin-bottom: 20px;
+}
+
+#events-right span{
+  font-size: 1.05rem;
+}
+
+div.link-event{
+  margin-bottom: 8px;
+}
+
+.event-link a{
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--heading-color);
+}
+
+.event-link a:hover{
+  text-decoration: underline;
+}
+
+
+#map-location iframe{
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+
+section#hours{
+  margin-bottom: 40px;
+}
+
+footer#colophon h5{
+  margin: 20px 0px;
+  color: var(--main-bg-color);
+  font-size: 1.6rem;
+}
+
+
+div#footer-content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#contact-info p a{
+  color: var(--main-bg-color);
+}
+
+#bottom-menu ul{
+  padding-left:0px;
+}
+#bottom-menu ul li{
+  list-style-type: none;
+  margin-bottom: 8px;
+}
+
+#bottom-menu ul li a{
+  text-decoration: none;
+  color: var(--main-bg-color);
+}
+
+#bottom-menu ul li a:hover{
+  text-decoration: underline;
+}
+
+
+footer#colophon{
+  background-color: var(--nav-bg-color);
+  color:var(--main-bg-color);
+  padding: 40px 40px;
+}
+
+#colophon div h6{
+  margin:0px;
+  text-align: center;
+  font-size: 1.01rem;
+
+}
+
+div#copyright{
+  margin: 20px auto;
+  
+}
 
 
 /* ==========================================================================
