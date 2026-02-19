@@ -54,6 +54,7 @@ body{
     margin:0px;
     background-color: var(--main-bg-color);
     font-family: "Montserrat", sans-serif;
+    scroll-behavior: smooth;
 
 }
 
@@ -395,6 +396,27 @@ div#copyright{
   
 }
 
+
+#scrollToTopBtn{
+  position:fixed;
+  right:40px;
+  bottom:40px;
+  background-color: var(--heading-color);
+  color:var(--main-bg-color);
+  padding: 12px 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 1000;
+  transition: background-color .3s ease; 
+  border:0px;
+  display:none;
+}  
+
+
+#scrollToTopBtn:hover{  
+  background-color: #000;
+}
 
 /* ==========================================================================
    ========================================================================== */
