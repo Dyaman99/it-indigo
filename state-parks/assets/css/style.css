@@ -37,7 +37,7 @@ textarea {
 /* ------ Utility Classes  -------*/
   
 .container {
-  max-width: 380px; /* Design Time */
+  max-width: 400px; /* Design Time */
   margin: 0 auto;
 }
   
@@ -83,16 +83,6 @@ header.primary{
     }
 
     div.menu-items{
-        display: flex;
-        flex-direction: column;
-
-
-        .top-menu ul{
-            display:flex;
-            flex-direction:row;
-            justify-content: flex-end;
-        }
-
         .top-menu ul li{
             list-style-type: none;
         }
@@ -102,15 +92,11 @@ header.primary{
             text-decoration: none;
             color:#fff;
             font-size: 1.2rem;
+            transition: .3s;
         }
 
         .top-menu ul li a:hover{
           text-decoration: underline;
-        }
-
-        nav.bottom-menu ul{
-            display: flex;
-            flex-direction: row;
         }
 
         nav.bottom-menu ul li{
@@ -151,7 +137,7 @@ h2.site-title{
 
 .site-title span {
   display: block;  
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 #book-button a{
@@ -166,8 +152,55 @@ h2.site-title{
   text-decoration: none;
 }
 
+header.primary {
+  flex-wrap: wrap;
+}
+
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+header.primary .menu-items {
+  width: 100%;
+}
+
+header.primary .menu-items {
+  display: none;
+}
+
+header.primary.is-open .menu-items {
+  display: flex;
+}
 
 
+
+header.primary .top-menu ul,
+header.primary nav.bottom-menu ul {
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 0;
+  margin: 10px 0;
+}
+
+header.primary nav.bottom-menu ul li a,
+header.primary .top-menu ul li a {
+  display: block;
+  width: 100%;
+  padding: 12px 10px;
+}
+
+li#book-button a{
+  width: auto;
+}
 
 /* ==========================================================================
    ========================================================================== */
@@ -253,9 +286,6 @@ h2.site-title{
 
 
 
-
-
-
 section h2{
   color: var(--heading-color);
   font-size:1.9rem;
@@ -266,13 +296,13 @@ section h2{
 
 div#content{
   display: grid;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 1fr;
   grid-template-areas: 
-    "park-info events"
-    "map events"
-    "hours ."
+    "park-info"
+    "events"
+    "map"
+    "hours"
   ;
-  grid-gap:30px;
 }
 
 
@@ -431,6 +461,17 @@ div#copyright{
     .container{
       max-width:600px;
     }
+
+    div#content{
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+      "park-info"
+      "events"
+      "map"
+      "hours";
+    }
+
+
     
   }
   
@@ -443,7 +484,61 @@ div#copyright{
 @media screen and (min-width:992px){
 
   .container{
-    max-width: 984px;
+    max-width: 924px;
+  }
+
+  div#content{
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+      "park-info"
+      "events"
+      "map"
+      "hours";
+
+      grid-gap:30px;
+
+    }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  header.primary .menu-items {
+    display: flex !important; /* ensures always visible */
+    width: auto;
+    display: flex;
+    flex-direction: column;
+
+    .top-menu ul{
+            display:flex;
+            flex-direction:row;
+            justify-content: flex-end;
+    }
+
+    .bottom-menu ul{
+            display: flex;
+            flex-direction: row;
+    }
+  }
+
+  header.primary {
+    flex-wrap: nowrap;
+  }
+
+  /* back to horizontal lists */
+  header.primary .top-menu ul,
+  header.primary nav.bottom-menu ul {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  div.menu-items{
+    
+        /* .top-menu ul{
+            display:flex;
+            flex-direction:row;
+            justify-content: flex-end;
+        } */
   }
 
 }
@@ -457,6 +552,15 @@ div#copyright{
 
   .container{
     max-width: 1131px;
+  }
+
+  div#content{
+    grid-template-columns: 70% 30%;
+    grid-template-areas: 
+    "park-info events"
+    "map events"
+    "hours ."
+  ;
   }
 
 }

@@ -33,6 +33,14 @@ $(document).ready(function() {
 
   });
 
+  const header = document.querySelector("header.primary");
+  const toggleBtn = document.querySelector(".nav-toggle");
+
+  toggleBtn.addEventListener("click", () => {
+    const isOpen = header.classList.toggle("is-open");
+    toggleBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+
 }); 
  
 
