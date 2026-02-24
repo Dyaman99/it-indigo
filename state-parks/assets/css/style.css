@@ -37,7 +37,7 @@ textarea {
 /* ------ Utility Classes  -------*/
   
 .container {
-  max-width: 400px; /* Design Time */
+  max-width: 360px; /* Design Time */
   margin: 0 auto;
 }
   
@@ -76,9 +76,9 @@ header.primary{
 
     div.logo-text{
       display:flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-evenly;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
       color:var(--main-bg-color);
     }
 
@@ -131,13 +131,13 @@ header.primary h1 a{
 }
 
 h2.site-title{
-  margin-left:20px;
+  margin: 10px 0px 5px 5px;
   text-shadow: 1px 1px 3px black;
 }
 
 .site-title span {
   display: block;  
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 #book-button a{
@@ -179,6 +179,7 @@ header.primary .menu-items {
 
 header.primary.is-open .menu-items {
   display: flex;
+  justify-content: space-evenly;
 }
 
 
@@ -194,7 +195,6 @@ header.primary nav.bottom-menu ul {
 header.primary nav.bottom-menu ul li a,
 header.primary .top-menu ul li a {
   display: block;
-  width: 100%;
   padding: 12px 10px;
 }
 
@@ -381,9 +381,13 @@ footer#colophon h5{
 
 div#footer-content{
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  row-gap: 20px;
   align-items: center;
+}
+
+#contact-info{
+  text-align: center;
 }
 
 #contact-info p a{
@@ -392,6 +396,7 @@ div#footer-content{
 
 #bottom-menu ul{
   padding-left:0px;
+  text-align: center;
 }
 #bottom-menu ul li{
   list-style-type: none;
@@ -406,6 +411,13 @@ div#footer-content{
 #bottom-menu ul li a:hover{
   text-decoration: underline;
 }
+
+
+#map-location iframe{
+      width: 100%;
+      height: 250px;
+    }
+
 
 
 footer#colophon{
@@ -461,7 +473,7 @@ div#copyright{
     .container{
       max-width:600px;
     }
-
+/* 
     div#content{
       grid-template-columns: 1fr;
       grid-template-areas: 
@@ -469,9 +481,36 @@ div#copyright{
       "events"
       "map"
       "hours";
+    } */
+
+    #map-location iframe{
+      width: 600px;
+      height: 400px;
     }
 
+    header.primary div.logo-text{
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+    }
 
+    h2.site-title{
+      margin-left:20px;
+    }
+
+    div#footer-content{
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    #contact-info{
+      text-align: left;
+    }
+
+    #bottom-menu ul{
+      text-align: left;
+    }
     
   }
   
@@ -532,6 +571,10 @@ div#copyright{
     justify-content: flex-end;
   }
 
+  .site-title span {
+    font-size: 1.8rem;
+  }
+
 }
 
 
@@ -542,7 +585,7 @@ div#copyright{
  @media screen and (min-width:1320px){
 
   .container{
-    max-width: 1131px;
+    max-width: 1132px;
   }
 
   div#content{
