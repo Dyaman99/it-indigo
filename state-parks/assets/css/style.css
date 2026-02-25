@@ -517,6 +517,45 @@ div#copyright{
   
 
 
+
+/* -----------------------  Activities Page  -------------------------- */
+
+#activities{
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+#activity-h2{
+  text-align: center;
+}
+
+#activities-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:60px;
+}
+
+#activities figure{
+  margin: 0px;
+}
+
+#activities figure img{
+  border-radius:20px;
+}
+
+
+.activity-card{
+  padding:10px;
+  background-color: #C3E2EE;
+  border: 1px solid #C3E2EE;
+  border-radius: 20px;
+}
+
+
+
+
+
+
   /*----------------------- Desktop View (Small) --------------------- */
 
 

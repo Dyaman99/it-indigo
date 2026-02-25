@@ -5,7 +5,7 @@
   <title>Lake Ouachita State Park | Arkansas</title>
   <meta charset="UTF-8" />
   <meta name="description" content="A park with the largest lake in Arkansas." />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="author" content="Dilasa Yaman" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,8 +28,15 @@
         <span class="line-2">State Park</span>
       </h2>
     </div>
+
+    <button class="nav-toggle"
+          aria-controls="primary-menu"
+          aria-expanded="false"
+          aria-label="Menu">
+    ☰
+  </button>
     
-    <div class="menu-items">
+    <div class="menu-items" id="primary-menu">
       <div class="top-menu">
         <ul>
           <li><a href="#">Location</a></li>
@@ -38,7 +45,7 @@
         </ul>
       </div>
       
-      <nav role="navigation" class="bottom-menu">
+      <nav class="bottom-menu">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="#">About the Park</a></li>
@@ -107,7 +114,7 @@
 
     <section id="map-location">
     <h2>Location</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.4251100625934!2d-93.1772925!3d34.618696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87ccd0c95d79ce2d%3A0x2878add7271f8643!2sLake%20Ouachita%20State%20Park!5e0!3m2!1sen!2sus!4v1771464112676!5m2!1sen!2sus" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.4251100625934!2d-93.1772925!3d34.618696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87ccd0c95d79ce2d%3A0x2878add7271f8643!2sLake%20Ouachita%20State%20Park!5e0!3m2!1sen!2sus!4v1771464112676!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
     <address>5451 Mountain Pine Rd <br />Mountain Pine, AR 71956 </address>
     </section>
@@ -146,7 +153,7 @@
 
     <div id="footer-content">
       <div>
-      <img src="assets/img/ar-park-logo2.svg" />
+      <img src="assets/img/ar-park-logo2.svg" alt="park logo"/>
       <!-- <h5 class="site-title">
         <span class="line-1">Lake Ouachita</span>
         <span class="line-2">State Park</span>
