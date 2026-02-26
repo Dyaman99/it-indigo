@@ -460,6 +460,182 @@ div#copyright{
   background-color: #000;
 }
 
+
+
+/* -----------------------  Activities Page  -------------------------- */
+
+#activities{
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+#activity-h2{
+  text-align: center;
+}
+
+#activities-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:60px;
+}
+
+#activities figure{
+  margin: 0px;
+}
+
+#activities figure img{
+  border-radius:20px 20px 0px 0px;
+}
+
+
+.activity-card{
+  box-shadow: 0px 0px 12px 3px rgba(0, 0, 0, 0.25);
+  padding:10px;
+  background-color: #7eb0bd;
+  border: 1px solid #7eb0bd;
+  border-radius: 20px;
+}
+
+.activity-card div{
+  margin-left: 2px;
+}
+
+.activity-card div h4{
+  font-size: 1.5rem;
+  color: var(--heading-color);
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.activity-card div p{
+  color: var(--main-bg-color);
+  font-size:1.1rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  margin-top:0px;
+}
+
+
+
+
+/* -----------------------  About Page  -------------------------- */
+
+
+.hero-about{
+  background-image: url(../img/lake-ouachita-view.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 70vh;
+
+  display: flex;
+  align-items:flex-end;
+  justify-content: center;
+
+}
+
+.hero-content h2{
+  margin-top: 0px;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+
+.hero-content{
+  background-color: rgba(0, 0, 0, 0.60); /* translucent black */
+  color: var(--main-bg-color);
+
+  margin-bottom: 60px;
+  padding: 40px;
+
+  border-radius: 10px;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+section#about-park{
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+
+
+
+
+/* --------------------- Plan Your Visit  --------------------- */
+
+
+#planning{
+  margin-top: 60px;
+  margin-bottom: 60px;
+
+}
+
+/* tutorial styles */
+
+/* tabs */
+
+#tabs {
+	font-size: 90%;
+	margin-top: 20px;
+	margin-right: 0;
+	margin-bottom: 20px;
+	margin-left: 0;
+	}
+
+#tabs ul {
+	float: right;
+	padding-top: 4px;
+	width: 100%;
+	background-color: #444944;
+  padding-inline-start: 0px;
+  border-bottom: 4px solid #7eb0bd;
+	}
+	
+#tabs li {
+	margin-left: 8px;
+	list-style: none;
+	}
+	
+* html #tabs li {
+	display: inline; /* ie6 double float margin bug */
+	}
+		
+#tabs li,
+#tabs li a {
+	float: left;
+	}
+	
+#tabs ul li a {
+	text-decoration: none;
+	padding: 8px;
+	color: #FFF;
+	font-weight: bold;
+	}
+	
+#tabs ul li.active {
+	background-color: #7eb0bd;
+	}
+	
+#tabs ul li.active a {
+	color: #333333;
+	}
+	
+#tabs > div {
+	clear: both;
+	padding: 20px;
+	min-height: 200px;
+	background-color: #7eb0bd;
+	}
+	
+
+
+
+
+
+
 /* ==========================================================================
    ========================================================================== */
 
@@ -516,40 +692,6 @@ div#copyright{
   
   
 
-
-
-/* -----------------------  Activities Page  -------------------------- */
-
-#activities{
-  margin-top: 60px;
-  margin-bottom: 60px;
-}
-
-#activity-h2{
-  text-align: center;
-}
-
-#activities-grid{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap:60px;
-}
-
-#activities figure{
-  margin: 0px;
-}
-
-#activities figure img{
-  border-radius:20px;
-}
-
-
-.activity-card{
-  padding:10px;
-  background-color: #C3E2EE;
-  border: 1px solid #C3E2EE;
-  border-radius: 20px;
-}
 
 
 
