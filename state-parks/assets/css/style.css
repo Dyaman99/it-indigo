@@ -774,8 +774,15 @@ section#about-park{
     grid-template-areas: 
     "park-info events"
     "map events"
-    "hours ."
+    "hours hours"
   ;
+  }
+
+  .hours-flex{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    gap: 40px;
   }
 
 }
