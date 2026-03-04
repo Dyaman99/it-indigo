@@ -195,6 +195,42 @@ Hourly: $10.00</p>
 
     </section>
   
+    <section class="weather-widget container">
+      <h2>Temperature Forecast</h2>
+
+      <form id="weatherForm">
+        <label for="locationInput">Location</label>
+        <input
+          id="locationInput"
+          name="locationInput"
+          type="text"
+          placeholder="e.g., Lake Ouachita State Park or Little Rock"
+          value="Lake Ouachita State Park"
+          required
+        />
+        <button type="submit">Get Forecast</button>
+      </form>
+
+      <p id="errorMsg" class="error" role="alert" aria-live="polite"></p>
+
+      <div id="placeBox" class="place"></div>
+
+      <div class="table-wrap">
+        <table id="forecastTable">
+          <thead>
+            <tr>
+              <th>Date/Time</th>
+              <th>Temp (°F)</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <canvas id="tempChart" width="800" height="300"></canvas>
+    </section>
+
+
 
   <footer id="colophon" role="contentinfo">
 
@@ -238,7 +274,7 @@ Hourly: $10.00</p>
   </main>
   
 
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.js"></script>
 <script src="assets/js/app.js"></script>
