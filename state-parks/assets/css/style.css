@@ -322,7 +322,7 @@ section#hours{
   grid-area: hours;
 }
 
-
+/*  -  - - - Events Section  - - - -  */
 
 
 div#events-right{
@@ -361,6 +361,15 @@ div.link-event{
   text-decoration: underline;
 }
 
+#events-right{
+  position: sticky;
+  top: 10px;
+
+}
+
+
+
+/* - - - - - Map  - - - - - */
 
 #map-location iframe{
   border-radius: 20px;
@@ -459,6 +468,22 @@ div#copyright{
 #scrollToTopBtn:hover{  
   background-color: #000;
 }
+
+
+
+
+/* - - - - - - - - - - About Page - - - - - - - - - */
+
+#about-park .text-right{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#about-park .text-right img{
+  width: 100%;
+}
+
 
 
 

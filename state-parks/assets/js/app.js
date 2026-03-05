@@ -114,10 +114,9 @@ async function getWeatherForecast() {
           let tmpDate = new Date(unixTime);
           let formattedTime = tmpDate.toLocaleString();
 
-          // ✅ TABLE: keep every hour
           forecastTable += `<tr><td>${formattedTime}</td><td>${weatherHourly.temperature_2m[i]}</td></tr>`;
 
-          // ✅ CHART: only 3 points per day
+          // only 3 points per day
           if (keepHours.includes(tmpDate.getHours())) {
             chartLabels.push(formattedTime);
             chartTemps.push(weatherHourly.temperature_2m[i]);
