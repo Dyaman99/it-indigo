@@ -11,11 +11,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/accessible-slick-theme.min.css">
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 
   <script>
     $(document).ready(function(){
@@ -195,41 +194,38 @@ Hourly: $10.00</p>
 
     </section>
   
-    <section class="weather-widget container">
+    <section class="weather-section container">
       <h2>Temperature Forecast</h2>
 
-      <form id="weatherForm">
-        <label for="locationInput">Location</label>
+      <!-- Form (your JS expects #myform and an input with id="location") -->
+      <form id="myform">
+        <label for="location">Enter a location:</label>
         <input
-          id="locationInput"
-          name="locationInput"
           type="text"
+          id="location"
+          name="location"
           placeholder="e.g., Lake Ouachita State Park or Little Rock"
-          value="Lake Ouachita State Park"
           required
         />
-        <button type="submit">Get Forecast</button>
+
+        <!-- Button your jQuery click handler uses -->
+        <button type="button" id="DisplayTemp">Display Temperature</button>
+
+        <!-- Optional clear button if you want to use clearForm() -->
+        <button type="button" id="ClearBtn" onclick="clearForm()">Clear</button>
       </form>
 
-      <p id="errorMsg" class="error" role="alert" aria-live="polite"></p>
+      <!-- Your JS injects location info here -->
+      <div id="location-info"></div>
 
-      <div id="placeBox" class="place"></div>
+      <!-- Your JS injects the table HTML here -->
+      <div id="forecast-table"></div>
 
-      <div class="table-wrap">
-        <table id="forecastTable">
-          <thead>
-            <tr>
-              <th>Date/Time</th>
-              <th>Temp (°F)</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
+      <!-- Chart canvas (your JS expects id="forecast-chart") -->
+      <div class="chart-wrap" style="height: 320px;">
+        <canvas id="forecast-chart"></canvas>
       </div>
-
-      <canvas id="tempChart" width="800" height="300"></canvas>
     </section>
-
 
 
   <footer id="colophon" role="contentinfo">
@@ -272,12 +268,15 @@ Hourly: $10.00</p>
   <button id="scrollToTopBtn">↑</button>
 
   </main>
-  
 
+  <!-- jQuery -->
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.js"></script>
 <script src="assets/js/app.js"></script>
+
 </body>
 
 </html>

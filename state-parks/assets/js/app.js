@@ -1,3 +1,5 @@
+"use strict";
+
 $(document).ready(function() {
   $('.hero-slides').slick({
     dots: true,
@@ -39,153 +41,144 @@ $(document).ready(function() {
   toggleBtn.addEventListener("click", () => {
     const isOpen = header.classList.toggle("is-open");
     toggleBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+
   });
 
+  $("#myform").validate({
+    rules: { location: { required: true } },
+    messages: { location: "Please enter a location." }
+  });
+
+  // Buttons
+  $("#DisplayTemp").on("click", getWeatherForecast);
+
+  // Default + auto-fetch
+  $("#location").val("Mountain Pine");
+  getWeatherForecast();
+
+
+
+async function getWeatherForecast() {
   "use strict";
 
-const form = document.getElementById("weatherForm");
-const input = document.getElementById("locationInput");
-const errorMsg = document.getElementById("errorMsg");
-const placeBox = document.getElementById("placeBox");
-const tbody = document.querySelector("#forecastTable tbody");
-const chartCanvas = document.getElementById("tempChart");
 
-let tempChart = null;
+  let form = $("#myform");
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  errorMsg.textContent = "";
-  placeBox.innerHTML = "";
-  tbody.innerHTML = "";
 
-  const userLocation = input.value.trim();
-
-  // 1) Validate required input
-  if (userLocation === "") {
-    errorMsg.textContent = "Location is required. Please enter a location.";
-    return;
-  }
-
-  try {
-    // 2) Geocode (take first match)
-    const geoUrl =
-      "https://geocoding-api.open-meteo.com/v1/search" +
-      `?name=${encodeURIComponent(userLocation)}` +
-      "&count=10&language=en&format=json";
-
-    const geoResp = await fetch(geoUrl);
-    if (!geoResp.ok) throw new Error("Geocoding request failed.");
-
-    const geoData = await geoResp.json();
-
-    if (!geoData.results || geoData.results.length === 0) {
-      errorMsg.textContent = "No matching location found. Try a different search.";
+  if (form.valid()) {
+    let locationInput = document.getElementById("location").value;
+    if (!locationInput) {
+      alert("Please enter a location");
       return;
     }
 
-    const first = geoData.results[0];
+    let geocodeURL = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(locationInput)}&count=10&format=json`;
 
-    // Required display fields from assignment
-    const name = first.name ?? "";
-    const admin1 = first.admin1 ?? "";
-    const country = first.country ?? "";
-    const latitude = first.latitude;
-    const longitude = first.longitude;
+    let geocodeResponse = await fetch(geocodeURL);
+    if (geocodeResponse.status >= 200 && geocodeResponse.status <= 299) {
+      let geocodeData = await geocodeResponse.json();
+      if (!geocodeData.results || geocodeData.results.length === 0) {
+        alert("No location found.");
+        return;
+      }
+      let locationData = geocodeData.results[0];
 
-    placeBox.innerHTML = `
-      <h3>Location Match</h3>
-      <ul>
-        <li><strong>Name:</strong> ${escapeHtml(name)}</li>
-        <li><strong>Admin1:</strong> ${escapeHtml(admin1)}</li>
-        <li><strong>Country:</strong> ${escapeHtml(country)}</li>
-        <li><strong>Latitude:</strong> ${latitude}</li>
-        <li><strong>Longitude:</strong> ${longitude}</li>
-      </ul>
-    `;
 
-    // 3) Forecast: hourly temperature_2m for 7 days in Fahrenheit
-    // Open-Meteo forecast is 7 days by default; we also set timezone + units.
-    const forecastUrl =
-      "https://api.open-meteo.com/v1/forecast" +
-      `?latitude=${latitude}&longitude=${longitude}` +
-      "&hourly=temperature_2m" +
-      "&temperature_unit=fahrenheit" +
-      "&timezone=America%2FChicago" +
-      "&forecast_days=7";
+      let weatherURL = `https://api.open-meteo.com/v1/forecast?latitude=${locationData.latitude}&longitude=${locationData.longitude}&hourly=temperature_2m&temperature_unit=fahrenheit`;
+      let weatherResponse = await fetch(weatherURL);
+      if (weatherResponse.status >= 200 && weatherResponse.status <= 299) {
+        let weatherData = await weatherResponse.json();
+        let weatherHourly = weatherData.hourly;
 
-    const wxResp = await fetch(forecastUrl);
-    if (!wxResp.ok) throw new Error("Forecast request failed.");
 
-    const wxData = await wxResp.json();
+        document.getElementById(
+          "location-info"
+        ).innerHTML = `<h3>${locationData.name}, ${locationData.admin1}, ${locationData.country}</h3>
+     <p><strong>Latitude =</strong> ${locationData.latitude} - <strong>Longitude =</strong> ${locationData.longitude}</p>`;
 
-    const times = wxData.hourly?.time;
-    const temps = wxData.hourly?.temperature_2m;
 
-    if (!times || !temps || times.length === 0) {
-      errorMsg.textContent = "Forecast data was returned, but it did not include hourly temperature.";
-      return;
+        let forecastTable =
+          "<table>" + "<caption><strong>Temperature</strong></caption>" + "<tr><th>Date</th><th>Temp</th></tr>";
+        let labels = [];
+        let temperatures = [];
+        // chart-only arrays
+        let chartLabels = [];
+        let chartTemps = [];
+
+        // pick 3 hours per day (8 AM, 2 PM, 8 PM)
+        const keepHours = [8, 14, 20];
+
+
+        for (let i = 0; i < weatherHourly.time.length; i++) {
+          let unixTime = Date.parse(weatherHourly.time[i]);
+          let tmpDate = new Date(unixTime);
+          let formattedTime = tmpDate.toLocaleString();
+
+          // ✅ TABLE: keep every hour
+          forecastTable += `<tr><td>${formattedTime}</td><td>${weatherHourly.temperature_2m[i]}</td></tr>`;
+
+          // ✅ CHART: only 3 points per day
+          if (keepHours.includes(tmpDate.getHours())) {
+            chartLabels.push(formattedTime);
+            chartTemps.push(weatherHourly.temperature_2m[i]);
+          }
+        }
+        forecastTable += "</table>";
+        document.getElementById("forecast-table").innerHTML = forecastTable;
+
+
+        if (window.myChart) {
+          window.myChart.destroy();
+        }
+
+
+        let ctx = document.getElementById("forecast-chart").getContext("2d");
+        window.myChart = new Chart(ctx, {
+          type: "line",
+          data: {
+            labels: chartLabels,
+            datasets: [
+              {
+                label: "Temperature (°F)",
+                data: chartTemps,
+                borderColor: "#b5d9a0",
+                fill: false
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false
+          }
+        });
+      } else {
+        alert("Failed to fetch weather data.");
+      }
+    } else {
+      alert("Failed to fetch location data.");
     }
-
-    // 4) Convert time strings to friendly format (your professor’s snippet)
-    const friendlyTimes = [];
-    for (let i = 0; i < times.length; i++) {
-      let unixmillsec = Date.parse(times[i]);
-      let tmpdate = new Date(unixmillsec);
-      friendlyTimes[i] = tmpdate.toLocaleString();
-    }
-
-    // 5) Build table rows
-    const rowsHtml = times
-      .map((_, i) => {
-        return `<tr><td>${friendlyTimes[i]}</td><td>${temps[i]}</td></tr>`;
-      })
-      .join("");
-
-    tbody.innerHTML = rowsHtml;
-
-    // 6) Line chart
-    renderChart(friendlyTimes, temps);
-
-  } catch (err) {
-    console.error(err);
-    errorMsg.textContent = "Something went wrong while loading weather data. Please try again.";
   }
+}
+
+
+function clearForm() {
+  "use strict";
+  document.getElementById("location").value = "";
+  document.getElementById("location-info").innerHTML = "";
+  document.getElementById("forecast-table").innerHTML = "";
+
+
+  if (window.myChart) {
+    window.myChart.destroy();
+  }
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("location").value = "New York"; // Set Default Location
+  getWeatherForecast(); // Automatically fetch forecast on page load
 });
 
-function renderChart(labels, dataPoints) {
-  if (tempChart) tempChart.destroy();
-
-  tempChart = new Chart(chartCanvas, {
-    type: "line",
-    data: {
-      labels,
-      datasets: [
-        {
-          label: "Temperature (°F)",
-          data: dataPoints,
-          tension: 0.2
-        }
-      ]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: { display: true }
-      },
-      scales: {
-        x: { ticks: { maxTicksLimit: 12 } }
-      }
-    }
-  });
-}
-
-// Basic HTML escaping so user input can't inject HTML into your page
-function escapeHtml(str) {
-  return String(str).replace(/[&<>"']/g, (ch) => {
-    const map = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" };
-    return map[ch];
-  });
-}
 
 }); 
  

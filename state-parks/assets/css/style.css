@@ -631,7 +631,17 @@ section#about-park{
 	}
 	
 
+#forecast-table th, #forecast-table td { 
+  border: 1px solid #000; 
+  padding: 0.5rem;
+}
+#forecast-table table{ 
+  border-collapse: collapse; 
+}
 
+#forecast-table table th{
+  background-color: #7eb0bd;
+}
 
 
 
