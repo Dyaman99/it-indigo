@@ -68,31 +68,19 @@ function calculate() {
 }
 
 async function convertUnits(fromValue, fromUnit, toUnit) {
-  "use strict";
+    "use strict";
 
-  const baseURL = "https://brucebauer.info/assets/ITEC3650/unitsconversion.php";
+    let myURL = "https://brucebauer.info/assets/ITEC3650/unitsconversion.php";
+    myURL = myURL + "?FromValue=" + fromValue + "&FromUnit=" + fromUnit + "&ToUnit=" + toUnit;
 
-  // Build query string (GET request)
-  let myURL = baseURL
-    + "?FromValue=" + encodeURIComponent(fromValue)
-    + "&FromUnit="  + encodeURIComponent(fromUnit)
-    + "&ToUnit="    + encodeURIComponent(toUnit);
-
-  try {
-    const response = await fetch(myURL);
-
-    if (!response.ok) {
-      throw new Error("HTTP error " + response.status);
+    try {
+        let response = await fetch(myURL);
+        let resultText = await response.text();
+        document.getElementById("result").innerHTML = resultText;
     }
-
-    const resultText = await response.text();
-
-    // Update the span
-    document.getElementById("result").innerHTML = resultText;
-  } catch (err) {
-    console.error(err);
-    document.getElementById("result").innerHTML = "Error: conversion failed.";
-  }
+    catch (err) {
+        document.getElementById("result").innerHTML = "Error: conversion failed.";
+    }
 }
 
 function clearForm() {
