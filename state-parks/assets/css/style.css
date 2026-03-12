@@ -474,17 +474,34 @@ div#copyright{
 
 /* - - - - - - - - - - About Page - - - - - - - - - */
 
+
+
 #about-park .text-right{
   display:flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-evenly;
+  gap: 20px;
+  align-items: center;   /* aligns to top, not stretched */
+  margin-bottom: 40px;
 }
 
-#about-park .text-right img{
-  width: 100%;
+#about-park .text-right figure {
+  flex-shrink: 0;        /* prevents flex from shrinking it */
+  width: 100%;            /* controls how much space the image takes */
+  margin: 0;
+}
+
+#about-park .text-right img {
+  width: 100%;           /* now 100% of the 45% figure, not a tiny box */
+  height: 300px;         /* optional: consistent height */
+  object-fit: cover;     /* keeps image looking good at that height */
+  border-radius: 10px;   /* optional: nice finishing touch */
 }
 
 
+figcaption{
+  margin-top: 5px;
+}
 
 
 /* -----------------------  Activities Page  -------------------------- */
@@ -501,7 +518,7 @@ div#copyright{
 #activities-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap:60px;
+  gap:40px;
 }
 
 #activities figure{
@@ -514,7 +531,7 @@ div#copyright{
 
 
 .activity-card{
-  box-shadow: 0px 0px 12px 3px rgba(0, 0, 0, 0.25);
+  /* box-shadow: 0px 0px 12px 3px rgba(0, 0, 0, 0.25); */
   padding:10px;
   background-color: #7eb0bd;
   border: 1px solid #7eb0bd;
@@ -790,8 +807,28 @@ section#about-park{
   .site-title span {
     font-size: 1.8rem;
   }
+  
+  #about-park .text-right{
+    flex-direction: row;
+    gap: 30px;
+    align-items: flex-start;   /* aligns to top, not stretched */
+    margin-bottom: 40px;
+  }
 
-}
+  #about-park .text-right figure {
+  flex-shrink: 0;        /* prevents flex from shrinking it */
+  width: 45%;            /* controls how much space the image takes */
+  margin: 0;
+  }
+
+  #about-park .text-right img {
+    width: 100%;           /* now 100% of the 45% figure, not a tiny box */
+    height: 300px;         /* optional: consistent height */
+    object-fit: cover;     /* keeps image looking good at that height */
+    border-radius: 10px;   /* optional: nice finishing touch */
+  }
+
+  }
 
 
  /*---------------------- Desktop View (Large) --------------------- */
@@ -801,7 +838,7 @@ section#about-park{
  @media screen and (min-width:1320px){
 
   .container{
-    max-width: 1132px;
+    max-width: 1112px;
   }
 
   div#content{
