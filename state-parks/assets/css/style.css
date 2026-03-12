@@ -574,20 +574,23 @@ figcaption{
   align-items:flex-end;
   justify-content: center;
 
+
 }
 
 .hero-content h2{
-  margin-top: 0px;
+  margin-top: 40px;
   margin-bottom: 40px;
   font-size: 2.5rem;
+  margin-left:40px;
+  margin-right: 40px;
 }
 
 .hero-content{
   background-color: rgba(0, 0, 0, 0.60); /* translucent black */
   color: var(--main-bg-color);
-
+  margin-top:20px;
   margin-bottom: 60px;
-  padding: 40px;
+  /* padding: 40px; */
 
   border-radius: 10px;
 }
@@ -595,6 +598,7 @@ figcaption{
 .hero-content p {
   font-size: 1.1rem;
   line-height: 1.6;
+  margin: 0px 40px 40px 40px;
 }
 
 section#about-park{
@@ -603,7 +607,9 @@ section#about-park{
 }
 
 
-
+article.text-right h3{
+  font-size:1.7rem;
+}
 
 
 /* --------------------- Plan Your Visit  --------------------- */

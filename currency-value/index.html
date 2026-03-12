@@ -5,57 +5,72 @@
     <meta name="keywords" content="currency, chart, ajax, javascript">
     <meta name="author" content="Dilasa Yaman">
     <title>Currency Value Chart</title>
-    <link href="style/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&family=Sniglet:wght@400;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <form id="myform" onsubmit="return false" novalidate="novalidate">
-        <label for="fromCurrency">From Currency:</label>
-        <select id="fromCurrency" name="fromCurrency" required>
-            <option value="">Select a currency</option>
-            <option value="USD">US Dollar</option>
-            <option value="EUR">Euro</option>
-            <option value="TRY">Turkish Lira</option>
-            <option value="TJS">Tajikistani Somoni</option>
-            <option value="KGS">Kyrgyz Som</option>
-        </select>
-        <br><br>
 
-        <label for="toCurrency">To Currency:</label>
-        <select id="toCurrency" name="toCurrency" required>
-            <option value="">Select a currency</option>
-            <option value="USD">US Dollar</option>
-            <option value="EUR">Euro</option>
-            <option value="TRY">Turkish Lira</option>
-            <option value="TJS">Tajikistani Somoni</option>
-            <option value="KGS">Kyrgyz Som</option>
-        </select>
+    <main class="container">
+        <header>
+            <h1>Currency Value Chart</h1>
+        </header>
 
-        <br><br>
+        <section id="currency-form">
+            <form id="myform" onsubmit="return false" novalidate="novalidate">
+                <label for="fromCurrency">From Currency:</label>
+                <select id="fromCurrency" name="fromCurrency" required>
+                    <option value="">Select a currency</option>
+                    <option value="USD">US Dollar</option>
+                    <option value="EUR">Euro</option>
+                    <option value="TRY">Turkish Lira</option>
+                    <option value="TJS">Tajikistani Somoni</option>
+                    <option value="KGS">Kyrgyz Som</option>
+                </select>
+                <br><br>
 
-         <label for="FromDate" class="formlabel">From Date:</label>
-            <input type="date" name="FromDate" id="FromDate" data-rule-required="true" data-msg-required="From Date is Required">
-            <label id="FromDateError" for="FromDate" class="error"></label>
+                <label for="toCurrency">To Currency:</label>
+                <select id="toCurrency" name="toCurrency" required>
+                    <option value="">Select a currency</option>
+                    <option value="USD">US Dollar</option>
+                    <option value="EUR">Euro</option>
+                    <option value="TRY">Turkish Lira</option>
+                    <option value="TJS">Tajikistani Somoni</option>
+                    <option value="KGS">Kyrgyz Som</option>
+                </select>
 
-        <br><br>
+                <br><br>
 
-            <label for="ToDate" class="formlabel">To Date:</label>
-            <input type="date" name="ToDate" id="ToDate" 
-			     data-rule-required="true" data-msg-required="To Date is Required">
+                <label for="FromDate" class="formlabel">From Date:</label>
+                    <input type="date" name="FromDate" id="FromDate" data-rule-required="true" data-msg-required="From Date is Required">
+                    <label id="FromDateError" for="FromDate" class="error"></label>
 
-	        <label id="ToDateError" for="ToDate" class="error"></label>
-            <br><br>
+                <br><br>
+
+                    <label for="ToDate" class="formlabel">To Date:</label>
+                    <input type="date" name="ToDate" id="ToDate" 
+                        data-rule-required="true" data-msg-required="To Date is Required">
+
+                    <label id="ToDateError" for="ToDate" class="error"></label>
+                    <br><br>
 
 
-            <input type="submit" value="showResults" id="showResults" name="showResults" onclick="showCurrencyChart();">
-            <input type="submit" formnovalidate value="Clear" id="Clear" name="Clear" onclick="ClearForm();">
-            <hr>
-            <br>
+                    <input type="submit" value="showResults" id="showResults" name="showResults" onclick="showCurrencyChart();">
+                    <input type="submit" formnovalidate value="Clear" id="Clear" name="Clear" onclick="ClearForm();">
+                    <hr>
+                    <br>
 
-            <div class="container">
-                <canvas id="chart-currency" width="400" height="400"></canvas>
-            </div>
+                    <div class="container">
+                        <canvas id="chart-currency" width="400" height="400"></canvas>
+                    </div>
 
-    </form>
+            </form>
+        </section>
+    </main>
+            
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
