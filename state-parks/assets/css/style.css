@@ -692,6 +692,147 @@ article.text-right h3{
 }
 
 
+/* ---------------- Book Now Page  --------------------  */
+
+#book-form{ 
+  /* border: 1px solid var(--nav-bg-color);
+   */
+}
+
+/* #form-content{
+  border: 1px solid var(--nav-bg-color);
+  border-radius: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 40px;
+}
+
+#form-content h2{  
+  border-bottom: 1px solid var(--nav-bg-color);
+  text-align: center;
+  padding-bottom: 20px;
+  margin-bottom: 0px;
+}
+ 
+#form-content h3{
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+#book-form label, #book-form input, #book-form select{
+  display: block;
+  margin-bottom: 10px;
+} */
+
+
+#form-content{
+  border: 1px solid var(--nav-bg-color);
+  border-radius: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 40px;
+  background-color: #fafafa;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+#form-content h2{  
+  border-bottom: 1px solid var(--nav-bg-color);
+  text-align: center;
+  padding-bottom: 20px;
+  margin-bottom: 0px;
+}
+ 
+#form-content h3{
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  color: #555;
+}
+
+
+
+#book-form label,
+#book-form input,
+#book-form select,
+#book-form textarea{
+  display: block;
+  /* width: 100%; */
+}
+
+#book-form label{
+  margin-bottom: 8px;
+  margin-top: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+#book-form input,
+#book-form select,
+#book-form textarea{
+  margin-bottom: 10px;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: #fafafa;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+#book-form input:focus,
+#book-form select:focus,
+#book-form textarea:focus{
+  outline: none;
+  border-color: var(--nav-bg-color);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+}
+
+#book-form textarea{
+  resize: vertical;
+  min-height: 120px;
+}
+
+#book-form input[type="checkbox"]{
+  width: auto;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+#book-form label:has(input[type="checkbox"]){
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-top: 25px;
+}
+
+#book-form button{
+  margin-top: 25px;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--nav-bg-color);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#book-form button:hover{
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+#book-form button:active{
+  transform: translateY(0);
+}
 
 
 /* ==========================================================================
