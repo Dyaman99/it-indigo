@@ -50,13 +50,24 @@ header{
     font-family: "Caladea", serif;
     font-size: 3em;
   }
+  
+    
+section{
+  margin-bottom: 40px;
+}   
 
-section#projects{
+
+section#web-projects, section#js-assignments{
   border: 1px solid #2D1728;
   border-radius:20px;
 }
 
-#projects nav ul li{
+h2{
+  text-align: center;
+  border-bottom: 1px solid #2D1728;
+}
+
+nav ul li{
   list-style-type: none;
   margin:20px;
   padding:10px;
