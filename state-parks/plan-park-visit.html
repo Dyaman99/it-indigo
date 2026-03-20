@@ -81,13 +81,13 @@
       <div id="tabs">
         <ul>
       
-        <li class="active"><a href="#tab-1">Cabins</a></li>
-                            
-        <li class><a href="#tab-2">Camping</a></li>
-                            
-                            
-                            
-        <li class><a href="#tab-3">Boats/Marinas</a></li>               
+          <li class="active"><a href="#tab-1">Cabins</a></li>
+                              
+          <li class><a href="#tab-2">Camping</a></li>
+                              
+                              
+                              
+          <li class><a href="#tab-3">Boats/Marinas</a></li>               
                             
       </ul>
 
@@ -144,31 +144,10 @@
         </div>
 
         <div class="tab-content">
-          <p>26 ft. Tri-Toon Party Barge w/Upper Deck and 150 hp Motor
-Daily Rate (Plus Tax & Fuel): $500.00
-6 Hour Rate: $465.00
-Deposit : $50.00
-Half Day Rate (Plus Tax & Fuel): $440.00</p>
-          <p>Contact park for questions</p>
-        </div>
-
-        <div class="tab-content">
           <p>Canoe
 Daily Rate: $40.00
 Half-daily Rate: $25.00
 Per Hour: $12.50</p>
-          <p>Contact park for questions</p>
-        </div>
-
-        <div class="tab-content">
-          <p>Solo Kayak
-Kayaks are available through a kiosk at the marina.</p>
-          <p>Contact park for questions</p>
-        </div>
-
-        <div class="tab-content">
-          <p>STandem Kayak
-Kayaks are available through a kiosk at the marina.</p>
           <p>Contact park for questions</p>
         </div>
 
@@ -196,7 +175,7 @@ Hourly: $10.00</p>
 
     </section>
   
-    <section class="weather-section container">
+    <section class="weather-section container" id="temperature-api">
       <h2>Temperature Forecast</h2>
 
       <!-- Form (your JS expects #myform and an input with id="location") -->
@@ -221,11 +200,13 @@ Hourly: $10.00</p>
       <div id="location-info"></div>
 
       <!-- Your JS injects the table HTML here -->
-      <div id="forecast-table"></div>
+      <div class="forecast-layout">
+        <div id="forecast-table"></div>
 
-      <!-- Chart canvas (your JS expects id="forecast-chart") -->
-      <div class="chart-wrap" style="height: 320px;">
-        <canvas id="forecast-chart"></canvas>
+        <!-- Chart canvas -->
+        <div class="chart-wrap" style="height: 320px;">
+          <canvas id="forecast-chart"></canvas>
+        </div>
       </div>
     </section>
 

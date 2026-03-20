@@ -523,7 +523,7 @@ figcaption{
 #activities-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap:40px;
+  gap: 40px;
 }
 
 #activities figure{
@@ -531,16 +531,21 @@ figcaption{
 }
 
 #activities figure img{
-  border-radius:20px 20px 0px 0px;
+  border-radius: 20px 20px 0px 0px;
 }
 
-
 .activity-card{
-  /* box-shadow: 0px 0px 12px 3px rgba(0, 0, 0, 0.25); */
-  padding:10px;
+  box-shadow: 0px 4px 12px 3px rgba(0, 0, 0, 0.25);
+  padding: 10px;
   background-color: #7eb0bd;
   border: 1px solid #7eb0bd;
   border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.activity-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0px 10px 24px 4px rgba(0, 0, 0, 0.35);
 }
 
 .activity-card div{
@@ -556,14 +561,11 @@ figcaption{
 
 .activity-card div p{
   color: var(--main-bg-color);
-  font-size:1.1rem;
+  font-size: 1.1rem;
   font-weight: 500;
   margin-bottom: 20px;
-  margin-top:0px;
+  margin-top: 0px;
 }
-
-
-
 
 /* -----------------------  About Page  -------------------------- */
 
@@ -620,82 +622,184 @@ article.text-right h3{
 /* --------------------- Plan Your Visit  --------------------- */
 
 
-#planning{
+#planning {
   margin-top: 60px;
   margin-bottom: 60px;
-
 }
 
-/* tutorial styles */
-
-/* tabs */
-
+/* ── Tab Nav ── */
 #tabs {
-	font-size: 90%;
-	margin-top: 20px;
-	margin-right: 0;
-	margin-bottom: 20px;
-	margin-left: 0;
-	}
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 #tabs ul {
-	float: right;
-	padding-top: 4px;
-	width: 100%;
-	background-color: #444944;
-  padding-inline-start: 0px;
-  border-bottom: 4px solid #7eb0bd;
-	}
-	
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #2e3330;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
 #tabs li {
-	margin-left: 8px;
-	list-style: none;
-	}
-	
-* html #tabs li {
-	display: inline; /* ie6 double float margin bug */
-	}
-		
-#tabs li,
-#tabs li a {
-	float: left;
-	}
-	
+  margin: 0;
+}
+
 #tabs ul li a {
-	text-decoration: none;
-	padding: 8px;
-	color: #FFF;
-	font-weight: bold;
-	}
-	
+  display: block;
+  text-decoration: none;
+  padding: 10px 18px;
+  color: #ccc;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#tabs ul li a:hover {
+  background-color: #4a5c50;
+  color: #fff;
+}
+
 #tabs ul li.active {
-	background-color: #7eb0bd;
-	}
-	
+  background-color: #7eb0bd;
+}
+
 #tabs ul li.active a {
-	color: #333333;
-	}
-	
+  color: #1a1a1a;
+}
+
+
+/* ── Tab Panels ── */
 #tabs > div {
-	clear: both;
-	padding: 20px;
-	min-height: 200px;
-	background-color: #7eb0bd;
-	}
+  clear: both;
+  padding: 28px 32px;
+  min-height: 200px;
+  background-color: #7eb0bd;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ── Tab Content ── */
+.tab-content {
+  margin-bottom: 20px;
+}
+
+.tab-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+}
+
+.tab-content p {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #1e1e1e;
+  margin-bottom: 14px;
+  white-space: pre-line;
+}
+
+.tab-content ol {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.tab-content ol li {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #1e1e1e;
+}
+
+.tab-content button {
+  margin-top: 8px;
+  padding: 10px 18px;
+  background-color: #2e3330;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.90rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.tab-content button:hover {
+  background-color: #4a5c50;
+}
 	
 
-#forecast-table th, #forecast-table td { 
-  border: 1px solid #000; 
-  padding: 0.5rem;
+/* - -- - - - - temperature forecast styling - - - - - -- - - */
+
+#forecast-table th,
+#forecast-table td {
+  border: 1px solid #aaa;
+  padding: 0.6rem 1rem;
 }
+
+
 #forecast-table table{ 
   border-collapse: collapse; 
 }
 
 #forecast-table table th{
   background-color: #7eb0bd;
+  text-align: left;
 }
 
+/* --- Weather Section --- */
+.weather-section {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+/* - - Table + Chart side by side --- */
+.forecast-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+/* ── Table ── */
+#forecast-table {
+  flex: 1;
+}
+
+#forecast-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#forecast-table table caption {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+/* alternating rows */
+#forecast-table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+#forecast-table tbody tr:nth-child(even) {
+  background-color: #d9d9d9;
+}
+
+/* hover */
+#forecast-table tbody tr:hover {
+  background-color: #8a8a8a;
+  cursor: default;
+}
+
+/* Chart */
+.chart-wrap {
+    height: 320px;
+    width: 100%;
+  }
 
 /* ---------------- Book Now Page  --------------------  */
  
@@ -886,7 +990,30 @@ article.text-right h3{
     #bottom-menu ul{
       text-align: left;
     }
+      
+    #tabs ul li a {
+      padding: 12px 24px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+       
     
+    .tab-content p {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .tab-content ol li {
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .tab-content button {
+      padding: 10px 22px;
+      font-size: 0.95rem;
+    }
+        
   }
   
   
@@ -973,6 +1100,15 @@ article.text-right h3{
     height: 300px;         /* optional: consistent height */
     object-fit: cover;     /* keeps image looking good at that height */
     border-radius: 10px;   /* optional: nice finishing touch */
+  }
+
+  .forecast-layout {
+    flex-direction: row;
+  }
+
+  .chart-wrap {
+    flex: 1.5;
+    height: 320px;
   }
 
   }

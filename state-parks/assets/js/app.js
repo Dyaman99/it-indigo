@@ -44,18 +44,18 @@ $(document).ready(function() {
 
   });
 
-  $("#myform").validate({
-    rules: { location: { required: true } },
-    messages: { location: "Please enter a location." }
-  });
 
-  // Buttons
-  $("#DisplayTemp").on("click", getWeatherForecast);
+// Only validate if the form exists on this page
+  if ($("#myform").length) {
+    $("#myform").validate({
+      rules: { location: { required: true } },
+      messages: { location: "Please enter a location." }
+    });
 
-  // Default + auto-fetch
-  $("#location").val("Mountain Pine");
-  getWeatherForecast();
-
+    $("#DisplayTemp").on("click", getWeatherForecast);
+    $("#location").val("Mountain Pine");
+    getWeatherForecast();
+  }
 
 
 async function getWeatherForecast() {
@@ -106,17 +106,21 @@ async function getWeatherForecast() {
         let chartTemps = [];
 
         // pick 3 hours per day (8 AM, 2 PM, 8 PM)
-        const keepHours = [8, 14, 20];
 
+        const keepHours = [8, 14, 20];   // chart stays the same
+        const tableHours = [8, 20];      // table: 8 AM and 8 PM only
 
         for (let i = 0; i < weatherHourly.time.length; i++) {
           let unixTime = Date.parse(weatherHourly.time[i]);
           let tmpDate = new Date(unixTime);
           let formattedTime = tmpDate.toLocaleString();
 
-          forecastTable += `<tr><td>${formattedTime}</td><td>${weatherHourly.temperature_2m[i]}</td></tr>`;
+          // Table: only show 8 AM and 8 PM
+          if (tableHours.includes(tmpDate.getHours())) {
+            forecastTable += `<tr><td>${formattedTime}</td><td>${weatherHourly.temperature_2m[i]}°F</td></tr>`;
+          }
 
-          // only 3 points per day
+          // Chart: keep 3 points per day (unchanged)
           if (keepHours.includes(tmpDate.getHours())) {
             chartLabels.push(formattedTime);
             chartTemps.push(weatherHourly.temperature_2m[i]);
@@ -140,7 +144,7 @@ async function getWeatherForecast() {
               {
                 label: "Temperature (°F)",
                 data: chartTemps,
-                borderColor: "#b5d9a0",
+                borderColor: "#7eb0bd",
                 fill: false
               }
             ]
