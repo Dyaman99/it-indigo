@@ -1,0 +1,1622 @@
+/* =========================================
+   1. COLOR VARIABLES
+========================================= */
+:root {
+  --bro-header-bg: #FFF5E4;
+  --bro-header-text: #222222;
+  --bro-hover: #4a6fa5;
+
+  --bro-footer-bg: #4F622A;
+  --bro-footer-text: #ffffff;
+  --bro-footer-link: #9ecbff;
+}
+
+/* =========================================
+   2. RESET & GLOBAL STYLES
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #FFF5E4;
+  color: var(--bro-header-text);
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================================
+   3. MAIN CONTAINERS & LAYOUT
+========================================= */
+main.bro-main {
+  flex: 1;
+  padding-top: 0px; 
+}
+
+main.bro-main-river {
+  flex: 1;
+  padding-top: 0px; 
+  background: linear-gradient(
+    to bottom,
+    rgba(52, 98, 157, 0.65),
+    #FFF5E4
+  );
+}
+
+main.bro-main-contact {
+  flex: 1;
+  padding-top: 0px; 
+  background: linear-gradient(
+    to bottom,
+    #223103,
+    #FFF5E4
+  );
+}
+
+main.bro-main-cabin {
+  flex: 1;
+  padding-top: 0px; 
+  background: linear-gradient(
+    to bottom,
+    #D19A27,
+    #FFF5E4
+  );
+}
+
+main.bro-main-canoe {
+  flex: 1;
+  padding-top: 0px; 
+  background: linear-gradient(
+    to bottom,
+    #D19A27,
+    #FFF5E4
+  );
+}
+
+main.bro-main-index {
+  flex: 1;
+  padding-top: 0px; 
+}
+
+#layout {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.8fr);
+  gap: 24px;
+}
+
+@media (max-width: 991px) {
+  #layout {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Correct mobile spacing */
+  main.bro-main,
+  main.bro-main-river,
+  main.bro-main-contact,
+  main.bro-main-cabin,
+  main.bro-main-canoe,
+  main.bro-main-index {
+    padding-top: 0px;
+  }
+}
+
+/* =========================================
+   4. BUTTONS & SLICK SLIDER CONTROLS
+========================================= */
+button.show-graph {
+  background-color: #4F622A !important;
+  border-color: #4F622A !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+
+button.show-graph:hover {
+  background-color: #3d4f22 !important;
+  border-color: #3d4f22 !important;
+}
+
+.custom-btn {
+  background-color: #4F622A;
+  border-color: #4F622A;
+  color: #fff;
+}
+
+.custom-btn:hover {
+  background-color: #3d4c20;
+  border-color: #3d4c20;
+}
+
+/* Slick slider controls styled for your site */
+.slick-autoplay-toggle-button,
+.slick-prev .slick-prev-icon,
+.slick-next .slick-next-icon,
+.slick-dots li button .slick-dot-icon,
+.slick-dots li.slick-active button .slick-dot-icon {
+  color: var(--bro-header-text);
+}
+
+.slick-next:focus .slick-next-icon,
+.slick-next:focus .slick-prev-icon,
+.slick-prev:focus .slick-next-icon,
+.slick-prev:focus .slick-prev-icon,
+.slick-dots li button:focus .slick-dot-icon:before,
+.slick-dots li.slick-active button:focus .slick-dot-icon,
+.slick-autoplay-toggle-button:focus {
+  color: var(--bro-hover);
+}
+
+/* =========================================
+   5. NAVBAR
+========================================= */
+.bro-navbar {
+  background: var(--bro-header-bg);
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  position: relative; /* or static */
+}
+
+.bro-logo-img {
+  height: 170px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-link {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-left: 20px;
+  color: var(--bro-header-text) !important;
+}
+
+.nav-link:hover {
+  color: var(--bro-hover) !important;
+}
+
+.navbar-nav {
+  margin-top: 80px;
+}
+
+@media (max-width: 991px) {
+  .bro-navbar {
+    padding: 12px 0;
+  }
+
+  .bro-logo-img {
+    height: 95px;
+  }
+
+  .navbar-collapse {
+    background: var(--bro-header-bg);
+    padding: 20px 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+
+  .nav-link {
+    font-size: 1.3rem;
+    padding: 12px 0;
+    margin: 0;
+    border-left: 4px solid transparent;
+  }
+
+  .nav-link:hover {
+    border-left-color: var(--bro-hover);
+  }
+}
+
+/* =========================================
+   6. HERO SECTIONS (STATIC PAGES)
+========================================= */
+.river-hero {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  background-image: url("../img/DSC08193.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.river-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.river-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.river-hero-content h1 {
+  font-family: "Lilita One", sans-serif;
+  font-size: 80px;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+
+.contact-hero {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  background-image: url("../img/DSC02228.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.contact-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.contact-hero-content h1 {
+  font-family: "Lilita One", sans-serif;
+  font-size: 80px;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+
+.cabin-hero {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  background-image: url("../img/bear-ridge-3-Picsart-AiImageEnhancer.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cabin-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.cabin-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.cabin-hero-content h1 {
+  font-family: "Lilita One", sans-serif;
+  font-size: 80px;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+
+.canoe-hero {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  background-image: url("../img/DSC05830\ \(1\).jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.canoe-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.canoe-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.canoe-hero-content h1 {
+  font-family: "Lilita One", sans-serif;
+  font-size: 80px;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 991px) {
+  .river-hero,
+  .contact-hero,
+  .cabin-hero,
+  .canoe-hero {
+    height: 250px;
+  }
+
+  .river-hero-content h1,
+  .contact-hero-content h1,
+  .cabin-hero-content h1,
+  .canoe-hero-content h1 {
+    font-size: 2.4rem;
+  }
+}
+
+/* =========================================
+   7. HERO SLIDER (Preserved cascade overrides)
+========================================= */
+/* --- Block 1 --- */
+.hero-slider {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-slides {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 300%; 
+  animation: heroSlideShow 12s infinite;
+}
+
+.hero-slide {
+  flex: 0 0 100%;
+  position: relative;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 70vh;
+  min-height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay h2 {
+  font-family: "Lilita One", sans-serif;
+  font-size: 4.5rem;
+  color: #fff;
+  margin: 10px;    
+  padding-left: 40px;   
+}
+
+.hero-overlay p {
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 0;
+  max-width: 700px;        
+}
+
+@keyframes heroSlideShow {
+  0%   { transform: translateX(0); }
+  30%  { transform: translateX(0); }
+  33%  { transform: translateX(-100%); }
+  63%  { transform: translateX(-100%); }
+  66%  { transform: translateX(-200%); }
+  96%  { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+@media (max-width: 991px) {
+  .hero-slide img {
+    height: 50vh;
+  }
+  .hero-overlay h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* --- Block 2 (Overrides) --- */
+.hero-slider {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  height: 70vh;
+  min-height: 420px;
+}
+
+.hero-slides {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 300%;
+  height: 100%;
+  animation: heroSlideShow 12s infinite;
+}
+
+.hero-slide {
+  flex: 0 0 33.3333%;
+  position: relative;
+  height: 100%;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== HERO TEXT OVERLAY (NO SHADOW BACKGROUND) ===== */
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 20px;              
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  text-align: left;
+  padding: 0;
+  background: none;       
+}
+
+.hero-overlay h2 {
+  font-family: "Lilita One", sans-serif;
+  font-size: 4.5rem;
+  color: #fff;
+  margin: 0 0 10px 0;
+  text-shadow: none;      
+}
+
+.hero-overlay p {
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 0;
+  max-width: 700px;
+  padding-left: 40px;     
+  text-shadow: none;      
+}
+
+@keyframes heroSlideShow {
+  0%   { transform: translateX(0); }
+  30%  { transform: translateX(0); }
+  33%  { transform: translateX(-33.3333%); }
+  63%  { transform: translateX(-33.3333%); }
+  66%  { transform: translateX(-66.6666%); }
+  96%  { transform: translateX(-66.6666%); }
+  100% { transform: translateX(0); }
+}
+
+@media (max-width: 991px) {
+  .hero-overlay {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    text-align: center;
+  }
+  .hero-overlay h2 {
+    font-size: 3rem; 
+    margin: 0;
+  }
+  .hero-overlay p {
+    display: none; 
+  }
+  .hero-slider {
+    height: 50vh;
+    min-height: 280px;
+  }
+}
+@media (max-width: 991px) {
+  .hero-overlay {
+    left: calc(50% - 10px); /* shift overlay 10px left */
+    transform: translate(-50%, -50%);
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-overlay h2 {
+    font-size: 4.5rem;
+    text-align: center;
+  }
+}
+
+
+/* =========================================
+   8. RIVER LEVELS
+========================================= */
+.reading {
+  background: #ffffff;
+  border: 2px solid #4F622A;
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+.reading h3 {
+  color: #4F622A;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.reading strong {
+  color: #222;
+  font-weight: 600;
+}
+
+.weather-inline {
+  background: #34629D;
+  border: 1px solid #34629D;
+  color: #ffffff;
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.weather-inline img {
+  width: 40px;
+  height: 40px;
+  filter: brightness(1.2);
+}
+
+.weather-inline span {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+#graphPanel {
+  background: #ffffff;
+  border: 2px solid #4F622A;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+#graphTitle {
+  color: #4F622A;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.chart-wrapper {
+  height: 350px;
+  width: 100%;
+}
+
+/* =========================================
+   9. CABIN RENTAL & AMENITIES
+========================================= */
+#cabin-rental.container {
+  max-width: 800px;   
+  margin: 40px auto;
+  padding: 40px;      
+  background-color: #fafafa;
+  border-radius: 20px;
+}
+
+.cabin-slideshow {
+  grid-area: slideshow;
+}
+
+.cabin-slideshow img {
+  width: 100%;
+  object-fit: cover;
+}
+
+#bear-ridge-cabin { grid-area: cabin; }
+#pricing { grid-area: pricing; }
+#cabin-amenities { grid-area: amenities; }
+
+#bear-ridge-cabin h2,
+#pricing h2,
+#cabin-amenities h2 {
+  margin-top: 0;
+  color: #34629D;
+}
+
+#pricing ul,
+#cabin-amenities ul {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+#reserve-form {
+  grid-area: form;
+  border: 1px solid #cccccc;
+  border-radius: 20px;
+  padding: 30px;
+  background-color: #fafafa;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+#reserve-form p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #34629D;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+#reserve-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+#reserve-form input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 18px;
+  border: 1px solid #d8cbb8;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: white;
+}
+
+#reserve-form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: #34629D;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#reserve-form button:hover {
+  background-color: #D19A27;
+}
+
+#reserve-form .form-note {
+  margin-top: 15px;
+  margin-bottom: 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+@media (max-width: 991px) {
+  #cabin-rental.container {
+    max-width: 95%;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  #cabin-rental {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "slideshow"
+      "cabin"
+      "pricing"
+      "amenities"
+      "form";
+    gap: 20px;
+  }
+
+  .cabin-slideshow img {
+    height: auto;
+    border-radius: 12px;
+  }
+
+  #reserve-form {
+    padding: 20px;
+  }
+}
+
+/* =========================================
+   10. FIND US SECTION (Preserved overrides)
+========================================= */
+/* --- Base Styles --- */
+.buffalo-find-us {
+  padding: 72px 20px;
+  background: #fff;
+}
+
+.buffalo-find-us__container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.buffalo-find-us__content h2 {
+  margin: 0 0 24px;
+  font-family: 'Lilita One';
+  font-size: 40px;
+  line-height: 1;
+  color: #2c2d0c;
+}
+
+.buffalo-find-us__description {
+  margin: 0 0 32px;
+  font-family: 'Montserrat';
+  font-size: 22px;
+  line-height: 1.45;
+  color: #000;
+  max-width: 640px;
+}
+
+.buffalo-find-us__features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 18px;
+}
+
+.buffalo-find-us__features li {
+  position: relative;
+  padding-left: 54px;
+  font-family: 'Montserrat';
+  font-size: 20px;
+  line-height: 1.4;
+  color: #000;
+}
+
+.buffalo-find-us__features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #d9d9d9;
+  color: #1e1e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.buffalo-find-us__sidebar {
+  display: grid;
+  gap: 24px;
+}
+
+.buffalo-find-us__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.buffalo-find-us__info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.buffalo-find-us__address {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.4;
+  color: #000;
+}
+
+.buffalo-find-us__link,
+.buffalo-find-us__info a {
+  width: fit-content;
+  font-size: 22px;
+  line-height: 1.3;
+  color: #2365de;
+  text-decoration: underline;
+}
+
+.buffalo-find-us__info h3 {
+  margin: 18px 0 0;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 400;
+  color: #000000;
+}
+
+@media (max-width: 992px) {
+  .buffalo-find-us__container {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .buffalo-find-us__content h2 {
+    font-size: 34px;
+  }
+  .buffalo-find-us__description {
+    font-size: 20px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .buffalo-find-us {
+    padding: 56px 16px;
+  }
+  .buffalo-find-us__content h2 {
+    font-size: 28px;
+  }
+  .buffalo-find-us__description {
+    font-size: 18px;
+  }
+  .buffalo-find-us__features li {
+    font-size: 17px;
+    padding-left: 46px;
+  }
+  .buffalo-find-us__features li::before {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+  .buffalo-find-us__address,
+  .buffalo-find-us__link,
+  .buffalo-find-us__info a,
+  .buffalo-find-us__info h3 {
+    font-size: 18px;
+  }
+}
+
+/* --- Section Overrides --- */
+/* Make Find Us section smaller and centered */
+.buffalo-find-us {
+  max-width: 1300px;
+  margin: 60px auto;
+  padding: 40px 30px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 768px) {
+  .buffalo-find-us {
+    margin: 20px 12px;   /* adds the gap */
+    padding: 30px 20px;  /* slightly tighter padding */
+  }
+}
+
+/* =========================================
+   11. SERVICES GRID (HOMEPAGE)
+========================================= */
+#bro-services {
+  padding: 90px 20px;
+  background: transparent;
+}
+
+#services {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "cabin canoe river";
+  align-items: stretch; 
+}
+
+.service-card {
+   height: 100%; 
+  margin: 10px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+}
+
+.y-card {
+  background-color: #D19A27;
+}
+
+.b-card {
+  background-color: #34629D;
+}
+
+.service-card figure img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  height: 240px; 
+  object-fit: cover;
+}
+
+.name-card {
+  margin: 30px 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.service-card a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  #services {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "cabin cabin"
+      "canoe river";
+  }
+  #cabin a {
+    flex-direction: row;
+  }
+  #cabin figure img {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  #services {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "cabin"
+      "canoe"
+      "river";
+  }
+  #cabin a {
+    flex-direction: column;
+  }
+  #cabin figure img {
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 0;
+  }
+}
+
+/* =========================================
+   12. FOOTER
+========================================= */
+.bro-footer {
+  background-color: #556b3a;
+  color: #ffffff;
+  padding: 40px 0;
+  margin-top: 40px;
+}
+
+.bro-footer-logo-img {
+  max-width: 140px;
+  height: auto;
+}
+
+.footer-link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+.footer-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  opacity: 1;
+}
+
+.footer-mountain {
+  width: 100%;
+  height: 140px;
+  background: url("../img/mountain-ridge.svg") no-repeat center bottom;
+  background-size: cover;
+  position: absolute;
+  top: -95px;
+  left: 0;
+}
+
+/* Original overrides grouped here sequentially */
+.bro-footer {
+  position: relative;
+  overflow: visible;
+}
+
+.bro-footer {
+  position: relative;
+  overflow: visible;
+  padding-top: 160px; 
+}
+
+@media (max-width: 991px) {
+  /* Footer center on mobile */
+  .col-lg-4.text-center {
+    text-align: center !important;
+  }
+}
+
+/* Desktop footer alignment */
+@media (min-width: 992px) {
+  .col-lg-4.text-center {
+    text-align: right !important;
+  }
+}
+
+.cabin-hero-btn {
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 1.25rem;
+  border-radius: 8px;
+}
+.cabin-hero-btn {
+  background-color: #34629D !important;
+  border-color: #34629D !important;
+  color: #ffffff !important;
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.cabin-hero-btn:hover {
+  background-color: #2b527f !important; /* slightly darker shade */
+  border-color: #2b527f !important;
+}
+/* =========================================
+   CANOE RENTAL — INTRO SECTION
+========================================= */
+
+.bro-main-canoe .intro-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 42px;
+  align-items: start;
+  width: min(92%, 1200px);
+  margin: 0 auto;
+  padding: 90px 0;
+}
+
+.bro-main-canoe .section-tag {
+  color: #D19A27;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.bro-main-canoe .intro-copy h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  color: #34629D;
+  margin-bottom: 18px;
+}
+
+.bro-main-canoe .intro-copy p {
+  max-width: 640px;
+  font-size: 1.05rem;
+}
+
+/* FACT CARDS */
+.bro-main-canoe .fact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.bro-main-canoe .fact-card {
+  background: #ffffff;
+  border: 1px solid rgba(209,154,39,0.35);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.bro-main-canoe .fact-card span {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  letter-spacing: 1px;
+  color: #D19A27;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.bro-main-canoe .fact-card strong {
+  display: block;
+  font-size: 2rem;
+  color: #34629D;
+  margin-bottom: 4px;
+}
+
+.bro-main-canoe .fact-card small {
+  font-size: 1rem;
+  color: #6E5C2A;
+}
+
+/* =========================================
+   CANOE RENTAL — RATES GRID
+========================================= */
+
+.bro-main-canoe .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: min(92%, 900px);
+  margin: 40px auto;
+}
+
+.bro-main-canoe .column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bro-main-canoe .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #D9D9D9;
+  border-radius: 10px;
+  padding: 15px 20px;
+}
+
+.bro-main-canoe .label {
+  font-weight: 700;
+  font-size: 18px;
+  color: #34629D;
+}
+
+.bro-main-canoe .price {
+  font-weight: 600;
+  font-size: 18px;
+  color: #6E5C2A;
+}
+
+@media (max-width: 600px) {
+  .bro-main-canoe .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   CANOE RENTAL — SHUTTLE SECTION
+========================================= */
+
+.bro-main-canoe .shuttle-section {
+  background:
+    linear-gradient(rgba(52,98,157,0.93), rgba(52,98,157,0.93)),
+    url('images/river-water-texture.jpg') center/cover no-repeat;
+  color: #ffffff;
+  padding: 90px 0;
+}
+
+.bro-main-canoe .shuttle-layout {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 46px;
+  align-items: center;
+  width: min(92%, 1200px);
+  margin: 0 auto;
+}
+
+.bro-main-canoe .shuttle-copy h2 {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  margin-bottom: 18px;
+}
+
+.bro-main-canoe .shuttle-copy p {
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin-bottom: 24px;
+  color: rgba(255,255,255,0.92);
+}
+
+.bro-main-canoe .shuttle-points {
+  display: grid;
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.bro-main-canoe .shuttle-point {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 16px;
+  padding: 16px 18px;
+}
+
+.bro-main-canoe .shuttle-point strong {
+  display: block;
+  color: #D19A27;
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ROUTE CARD */
+.bro-main-canoe .route-card {
+  background: #FFF5E4;
+  color: #6E5C2A;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.bro-main-canoe .route-card h3 {
+  color: #34629D;
+  font-size: 1.85rem;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.bro-main-canoe .route-list {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  margin-bottom: 22px;
+  padding: 0;
+}
+
+.bro-main-canoe .route-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(110,92,42,0.1);
+}
+
+.bro-main-canoe .route-list span {
+  font-weight: 600;
+  color: #34629D;
+}
+
+.bro-main-canoe .route-list strong {
+  color: #6E5C2A;
+}
+
+.bro-main-canoe .route-note {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* CTA BUTTON */
+.bro-main-canoe .btn {
+  display: inline-block;
+  text-decoration: none;
+  background: #4F622A;
+  color: #ffffff;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-weight: bold;
+  transition: 0.25s ease;
+}
+
+.bro-main-canoe .btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* CTA SECTION */
+.bro-main-canoe .cta {
+  padding: 90px 0;
+}
+
+.bro-main-canoe .cta-content {
+  border: 1px solid #D19A27;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  padding: 20px;
+  width: min(92%, 1200px);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.bro-main-canoe .cta h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin-bottom: 16px;
+}
+
+.bro-main-canoe .cta p {
+  max-width: 700px;
+  font-size: 1.08rem;
+}
+
+@media (max-width: 900px) {
+  .bro-main-canoe .intro-grid,
+  .bro-main-canoe .shuttle-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .bro-main-canoe .fact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================
+   CANOE RENTAL — RESERVATION FORM FIX
+========================================= */
+
+.bro-main-canoe #reserve-form {
+  width: min(92%, 700px);
+  margin: 60px auto;
+  padding: 30px;
+  background: #fafafa;
+  border: 1px solid #d8cbb8;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.bro-main-canoe #reserve-form p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #34629D;
+  margin-bottom: 20px;
+}
+
+.bro-main-canoe #reserve-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.bro-main-canoe #reserve-form input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 18px;
+  border: 1px solid #d8cbb8;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.bro-main-canoe #reserve-form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: #34629D;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.bro-main-canoe #reserve-form button:hover {
+  background-color: #D19A27;
+}
+
+.bro-main-canoe .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px; 
+  margin: 50px auto;
+    width: min(95%, 1200px); 
+}
+
+.bro-main-canoe .grid .row {
+  display: flex;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.canoe-hero .center-btn {
+  background-color: #34629D !important;
+  border-color: #34629D !important;
+  color: #ffffff !important;
+
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.canoe-hero .center-btn:hover {
+  background-color: #2b527f !important;
+  border-color: #2b527f !important;
+  color: #ffffff !important;
+  opacity: 1 !important;        
+  box-shadow: none !important;  
+}
+/* EXPLORE SECTION HEADING */
+.bro-explore-header {
+  width: min(92%, 1200px);
+  margin: 0 auto 40px auto;
+  text-align: center;
+}
+
+.bro-explore-header h2 {
+  font-family: "Lilita One", sans-serif;
+  font-size: 48px;
+  line-height: 1;
+  color: #2c2d0c;
+  margin: 0;
+}
+
+/* EXPLORE CARD LABEL FONT */
+.bro-explore-card p {
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-family: "Lilita One", sans-serif;   /* <-- added */
+  font-size: 2rem;
+  font-weight: 700;
+  z-index: 2;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 768px) {
+  .bro-explore-header h2 {
+    font-size: 36px;
+  }
+  .bro-explore-card p {
+    font-size: 1.6rem;
+  }
+}
+/* =========================================
+   EXPLORE SECTION
+========================================= */
+
+.bro-explore {
+  padding: 90px 0;
+  background: transparent;
+}
+
+.bro-explore-container {
+  width: min(92%, 1200px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.bro-explore-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.bro-explore-card figure img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+.bro-explore-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.65));
+}
+
+.bro-explore-card p {
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  z-index: 2;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 900px) {
+  .bro-explore-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .bro-explore-container {
+    grid-template-columns: 1fr;
+  }
+  .bro-explore-card figure img {
+    height: 280px;
+  }
+}
+/* EXPLORE SECTION HEADING */
+.bro-explore-header {
+  width: min(92%, 1200px);
+  margin: 0 auto 40px auto;
+  text-align: center;
+}
+
+.bro-explore-header h2 {
+  font-family: "Lilita One", sans-serif;
+  font-size: 48px;
+  line-height: 1;
+  color: #2c2d0c;
+  margin: 0;
+}
+
+/* EXPLORE CARD LABEL FONT */
+.bro-explore-card p {
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-family: "Lilita One", sans-serif;   /* <-- added */
+  font-size: 2rem;
+  font-weight: 700;
+  z-index: 2;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 768px) {
+  .bro-explore-header h2 {
+    font-size: 36px;
+  }
+  .bro-explore-card p {
+    font-size: 1.6rem;
+  }
+}
+
+.bro-explore h2 {
+  font-family: "Lilita One", sans-serif;
+  font-size: 48px;
+  text-align: center;
+  color: #2c2d0c;
+  margin-bottom: 40px;
+  line-height: 1;
+}
+
+#bro-services h3 {
+  font-family: "Lilita One", sans-serif;
+  font-size: 48px;
+  text-align: center;
+  color: #2c2d0c;
+  margin-bottom: 40px;
+  line-height: 1;
+}

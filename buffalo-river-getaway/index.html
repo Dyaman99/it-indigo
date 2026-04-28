@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Buffalo River Getaway</title>
+
+  <link rel="icon" type="image/x-icon" href="assets/img/Screenshot 2026-04-09 173352-modified (2).png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- ============================
+       FULLSCREEN IMAGE VIEWER CSS
+  ============================= -->
+  <style>
+    /* ============================
+   CLICK TO VIEW OVERLAY
+============================ */
+.image-clickable {
+  position: relative;
+  display: inline-block;
+}
+
+.click-overlay {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.image-clickable:hover .click-overlay {
+  opacity: 1;
+}
+
+/* Always visible enough on mobile */
+@media (max-width: 768px) {
+  .click-overlay {
+    opacity: 1;
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+}
+
+    .image-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(4px);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .image-modal__content {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 12px;
+      object-fit: contain;
+    }
+
+    .image-modal__close {
+      position: absolute;
+      top: 20px;
+      right: 26px;
+      font-size: 48px;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 300;
+      user-select: none;
+    }
+
+    @media (max-width: 600px) {
+      .image-modal__close {
+        font-size: 38px;
+        top: 14px;
+        right: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ============================
+     NAVBAR
+============================= -->
+<nav class="navbar navbar-expand-lg bro-navbar">
+  <div class="container">
+
+    <a class="navbar-brand bro-logo" href="index.html">
+      <img src="assets/img/buffalo-river-logo2.svg"
+           alt="Buffalo River Getaway Logo"
+           class="bro-logo-img">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#broNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="broNav">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="cabin-rental.html">Cabins</a></li>
+        <li class="nav-item"><a class="nav-link" href="canoe-rental.html">Canoes</a></li>
+        <li class="nav-item"><a class="nav-link" href="river-level.html">River Levels</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<!-- ============================
+     HERO SLIDER
+============================= -->
+<section class="hero-slider">
+  <div class="hero-slides">
+
+    <div class="hero-slide">
+      <img src="assets/img/DSC03169.jpg" alt="Lake Ouachita scenic view">
+      <div class="hero-overlay container">
+        <h2>Welcome</h2>
+        <p>Welcome to Buffalo River Getaway, where cozy cabin stays and river adventures meet in the scenic wilderness of the Buffalo River.</p>
+      </div>
+    </div>
+
+    <div class="hero-slide">
+      <img src="assets/img/DSC03799.jpg" alt="Trail and forest view">
+      <div class="hero-overlay container">
+        <h2>Welcome</h2>
+        <p>Welcome to Buffalo River Getaway, where cozy cabin stays and river adventures meet in the scenic wilderness of the Buffalo River.</p>
+      </div>
+    </div>
+
+    <div class="hero-slide">
+      <img src="assets/img/DSC02228.jpg" alt="Camping by the lake">
+      <div class="hero-overlay container">
+        <h2>Welcome</h2>
+        <p>Welcome to Buffalo River Getaway, where cozy cabin stays and river adventures meet in the scenic wilderness of the Buffalo River.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================
+     MAIN CONTENT (GRADIENT STARTS HERE)
+============================= -->
+<main class="bro-main-index">
+
+  <!-- ============================
+       SERVICES GRID
+  ============================= -->
+  <section id="bro-services" class="container py-5">
+<h3>Services</h3>
+    <div id="services">
+
+      <!-- CABINS -->
+      <article id="cabin" class="service-card y-card">
+        <a href="cabin-rental.html">
+          <figure>
+            <img src="assets/img/bear-ridge-1.jpg" alt="Cabin Rentals">
+          </figure>
+          <div class="name-card">
+            <h2>Book Cabins</h2>
+            <span>&rarr;</span>
+          </div>
+        </a>
+      </article>
+
+      <!-- CANOES -->
+      <article id="canoe" class="service-card y-card">
+        <a href="canoe-rental.html">
+          <figure>
+            <img src="assets/img/DSC01242.jpg" alt="Canoe Rentals">
+          </figure>
+          <div class="name-card">
+            <h2>Rent Canoes</h2>
+            <span>&rarr;</span>
+          </div>
+        </a>
+      </article>
+
+      <!-- RIVER LEVELS -->
+      <article id="river-level" class="service-card b-card">
+        <a href="river-level.html">
+          <figure>
+            <img src="assets/img/DSC02248.jpg" alt="River Levels">
+          </figure>
+          <div class="name-card">
+            <h2>River Levels</h2>
+            <span>&rarr;</span>
+          </div>
+        </a>
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- EXPLORE SECTION -->
+<section class="bro-explore">
+   <h2>Explore the Buffalo River:</h2>
+  <div class="bro-explore-container">
+
+    <div class="bro-explore-card">
+      <figure>
+        <img src="https://media.istockphoto.com/id/1152678859/photo/buffalo-river-in-the-arkansas-ozarks.jpg?s=612x612&w=0&k=20&c=-p-Q0IqSf6u4ExxJiVsmL8OdnvunWViigU54cK_AwuY=">
+      </figure>
+      <p>Canoeing</p>
+    </div>
+
+    <div class="bro-explore-card">
+      <figure>
+        <img src="https://www.naturepl.com/cache/pcache2/01280861.jpg">
+      </figure>
+      <p>Wildlife Watching</p>
+    </div>
+
+    <div class="bro-explore-card">
+      <figure>
+        <img src="https://media.istockphoto.com/id/1437123704/photo/autumn-at-roark-bluff-in-steel-creek-campground-along-the-buffalo-river-located-in-the-ozark.jpg?s=612x612&w=0&k=20&c=GIZdANaPyarMkqe8IdIZ1xOQGEfWsqt4mvqAVpKgyPw=">
+      </figure>
+      <p>Hiking</p>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- ============================
+       FIND US SECTION
+  ============================= -->
+  <section class="buffalo-find-us">
+    <div class="buffalo-find-us__container">
+
+      <div class="buffalo-find-us__content">
+        <h2>Find Us By the Buffalo River</h2>
+
+        <p class="buffalo-find-us__description">
+          Buffalo River Getaway offers a peaceful escape in the scenic upper Buffalo River region of Arkansas,
+          where cozy cabin stays and outdoor adventure come together. From relaxing at Bear Ridge Cabin to
+          planning a canoe trip on the Buffalo, guests can enjoy the natural beauty, quiet atmosphere, and
+          memorable experiences that make this area so special.
+        </p>
+
+        <ul class="buffalo-find-us__features">
+          <li>Located in the upper Buffalo River wilderness</li>
+          <li>Cozy Bear Ridge Cabin with modern amenities</li>
+          <li>Canoe rentals and shuttling services from Ponca</li>
+          <li>Close to hiking, scenic river views, and wildlife watching</li>
+        </ul>
+      </div>
+
+      <div class="buffalo-find-us__sidebar">
+       <div class="buffalo-find-us__image image-clickable">
+  <span class="click-overlay">Click to View</span>
+  <img src="assets/img/buffalo-river-map.jpg" alt="buffalo map here" />
+</div>
+
+
+        <div class="buffalo-find-us__info">
+          <p class="buffalo-find-us__address">AR-43, Compton, AR 72624</p>
+          <a class="buffalo-find-us__link"
+             href="https://maps.app.goo.gl/qvE8NRSkJMj2zKhE9"
+             target="_blank"
+             rel="noopener">
+            Get Directions
+          </a>
+
+          <h3>Contact Us</h3>
+          <a href="mailto:tswallace@ualr.edu">tswallace@ualr.edu</a>
+          <a href="mailto:blbauer@ualr.edu">blbauer@ualr.edu</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================
+     FOOTER
+============================= -->
+<footer class="bro-footer py-5">
+
+  <div class="footer-mountain"></div>
+
+  <div class="container">
+
+    <div class="row align-items-center mb-4 text-center text-lg-start">
+
+      <div class="col-lg-4 mb-4 mb-lg-0 text-lg-start">
+        <img src="assets/img/Screenshot 2026-04-09 173352-modified (2).png"
+             alt="Buffalo River Getaway Logo"
+             class="bro-footer-logo-img">
+      </div>
+
+      <div class="col-lg-4 mb-4 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start fs-5">
+        <a href="cabin-rental.html" class="footer-link mb-2">Cabin Rental</a>
+        <a href="canoe-rental.html" class="footer-link mb-2">Canoe Rental</a>
+        <a href="river-level.html" class="footer-link mb-2">River Levels</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+      </div>
+
+      <div class="col-lg-4 text-center">
+        <p class="mb-3">Bruce Bauer: Business Manager (blbauer@ualr.edu)</p>
+        <p class="mb-3">Thomas Wallace: Owner (tswallace@ualr.edu)</p>
+        <p class="mb-0">Location: Newton County, AR</p>
+      </div>
+
+    </div>
+
+    <hr class="footer-divider my-4">
+
+    <div class="row align-items-center small">
+      <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+        <a href="#" class="footer-link">Back to Top</a>
+      </div>
+      <div class="col-md-6 text-center text-md-end">
+        <p class="mb-0">© Buffalo River Getaway 2026. All rights reserved.</p>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- ============================
+     FULLSCREEN IMAGE VIEWER HTML
+============================= -->
+<div id="image-modal" class="image-modal">
+  <span class="image-modal__close">&times;</span>
+  <img id="image-modal-img" class="image-modal__content" alt="">
+</div>
+
+<!-- ============================
+     FULLSCREEN IMAGE VIEWER JS
+============================= -->
+<script>
+  const modal = document.getElementById("image-modal");
+  const modalImg = document.getElementById("image-modal-img");
+  const closeBtn = document.querySelector(".image-modal__close");
+
+  // Only the Find Us image
+  const findUsImage = document.querySelector(".buffalo-find-us__image img");
+
+  if (findUsImage) {
+    findUsImage.style.cursor = "zoom-in";
+    findUsImage.addEventListener("click", () => {
+      modal.style.display = "flex";
+      modalImg.src = findUsImage.src;
+    });
+  }
+
+  // Close modal
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Close when clicking outside the image
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
